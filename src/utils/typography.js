@@ -1,12 +1,17 @@
 import Typography from "typography"
 import moragaTheme from "typography-theme-moraga"
 
+moragaTheme.baseFontSize = '20px';
 moragaTheme.bodyColor = 'hsl(0, 0%, 0%)';
 moragaTheme.headerColor = 'hsl(0, 100%, 100%)';
-moragaTheme.googleFonts.splice(0, 0, {
+moragaTheme.googleFonts.push({
   name: 'Lato',
   styles: ['200', '400', '400i', '700'],
-})
+});
+moragaTheme.googleFonts.push({
+  name: 'Oswald',
+  styles: ['500', '600'],
+});
 moragaTheme.headerFontFamily.splice(0, 0, 'Lato');
 moragaTheme.overrideThemeStyles = (data, options, styles) => {
   return {
@@ -15,21 +20,21 @@ moragaTheme.overrideThemeStyles = (data, options, styles) => {
       color: '#fff',
     },
     'a': {
-      fontWeight: 'bold',
       textTransform: 'uppercase',
-      letterSpacing: data.rhythm(1/8),
-      color: 'rgb(158, 158, 158)'
+      letterSpacing: data.rhythm(1/10),
+      color: 'rgb(158, 158, 158)',
+      fontFamily: 'Oswald'
     },
     'a:hover': {
       color: 'rgb(230, 230, 230)',
       textDecoration: 'none',
-      // fontWeight: 'bold'?
     },
     'small a': {
       fontSize: data.rhythm(1/2)
     },
     'h1,h2,h3,h4,h5,h6': {
-      color: 'gainsboro',
+      textTransform: 'uppercase',
+      color: '#bfbfbf',
     },
   };
 }
