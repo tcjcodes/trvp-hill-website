@@ -4,6 +4,8 @@ import { Section, SectionTitle } from "./section";
 import { primaryButton } from '../utils/buttons'
 
 import jacket from './mockjacket.png';
+import { lightColor } from '../utils/colors'
+import { zoomOnHover } from '../utils/animation'
 
 // TODO(TC) handle button click
 const MerchSection = () => (
@@ -17,11 +19,19 @@ const MerchSection = () => (
                 </p>
                 <p css={{ fontSize: rhythm(4 / 5) }}>Rep your city and get cozy in a TH fit.</p>
 
-                <button css={{ ...primaryButton, marginTop: rhythm(1 / 2) }}>Add to Cart</button>
+                <button css={{
+                    ...primaryButton,
+                    ...zoomOnHover,
+                    cursor: 'pointer',
+                    marginTop: rhythm(1 / 2)
+                }}>Add to Cart</button>
             </div>
             <div css={{ marginTop: rhythm(1 / 2) }}>
                 <div css={{ maxWidth: '500px' }}>
-                    <img css={{border: '8px solid white'}} src={jacket} alt="TH Bomber Jacket"/>
+                    <img css={{
+                        border: `${rhythm(1/4)} solid ${lightColor}`,
+                        ...zoomOnHover
+                    }} src={jacket} alt="TH Bomber Jacket"/>
                 </div>
             </div>
         </div>
