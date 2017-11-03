@@ -1,6 +1,7 @@
 module.exports = {
+    pathPrefix: '/trvp-hill-website',
     siteMetadata: {
-        title: `Gatsby Paradise`,
+        title: `TRVPHILL`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
