@@ -12,7 +12,6 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-typography": "^1.7.10",
     "normalize.css": "^7.0.0",
-    "react-fontawesome": "^1.6.1",
     "typography-theme-moraga": "^0.15.10"
   },
   "keywords": [
