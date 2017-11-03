@@ -1,6 +1,8 @@
 import React from 'react'
+import FontAwesome from 'react-fontawesome'
 import {rhythm} from '../utils/typography';
-import feather from '../utils/feather';
+import { secondaryFont } from "../utils/fonts";
+// import feather from '../utils/feather';
 
 const Section = (props) => (
   <section
@@ -18,7 +20,7 @@ const Section = (props) => (
 const SectionTitle = (props) => (
   <div css={{marginBottom: rhythm(1 / 2), textAlign: props.centered ? 'center' : 'left'}}>
     <h1 css={{
-      fontFamily: 'Oswald',
+      ...secondaryFont,
       letterSpacing: rhythm(1 / 10),
     }}>
       {props.children}<br/>
@@ -37,7 +39,7 @@ const Hero = () => (
     justifyContent: 'center',
     alignContent: 'center'
   }}>
-    <h1 css={{fontSize: rhythm(3.5), fontWeight: 600, color: 'white', letterSpacing: rhythm(3 / 2)}}>
+    <h1 css={{fontSize: rhythm(2.8), fontWeight: 600, color: 'white', letterSpacing: rhythm(3 / 2)}}>
       TRVPHILL
     </h1>
   </section>
@@ -53,21 +55,22 @@ const MusicSection = () => (
 )
 
 const SocialIcon = (props) => (
-  <div css={{display: 'inline-block', padding: `0 ${rhythm(1 / 2)}`}}><a
-    href={props.link}>{feather(props.icon, ['30', '30'])}</a></div>
+  <div css={{display: 'inline-block', padding: `0 ${rhythm(1 / 2)}`}}>
+    <a href={props.link} title={props.title || props.icon}><span css={{fontSize: rhythm(1/3) }} className={`fa fa-${props.icon}`} /></a>
+  </div>
 )
 
 
 const AboutCard = (props) => (
   <div css={{maxWidth: '500px'}}>
     <div css={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-      <img css={{width: '48%', objectFit: 'fill', borderRadius: '50%', border: `${rhythm(1 / 3)} solid white`}}
+      <img css={{maxWidth: rhythm(8), maxHeight: rhythm(8), objectFit: 'fill', borderRadius: '50%', border: `${rhythm(1 / 3)} solid white`}}
            src="http://via.placeholder.com/800x800" alt=""/>
     </div>
 
-    <div css={{padding: `0 ${rhythm(1)}`}}>
-      <div css={{marginBottom: rhythm(1 / 2), textAlign: 'center', fontSize: rhythm(1)}}>
-        <a href={props.nameTo}>{props.name}</a>
+    <div css={{textAlign: 'center', padding: `0 ${rhythm(1)}`}}>
+      <div css={{marginBottom: rhythm(1 / 2), fontSize: rhythm(7/10)}}>
+        <span css={{...secondaryFont, letterSpacing: rhythm(2/10)}} href={props.nameTo}>{props.name}</span>
       </div>
       <p>
         Purr for no reason rub face on everything, and sit on human or spill litter box, scratch at owner, destroy
@@ -75,9 +78,7 @@ const AboutCard = (props) => (
         litter box chirp at birds.
       </p>
       <div css={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-        <SocialIcon icon='music' link='#'/>
-        <SocialIcon icon='facebook' link='#'/>
-        <SocialIcon icon='instagram' link='#'/>
+        {props.children}
       </div>
     </div>
   </div>
@@ -88,8 +89,22 @@ const AboutSection = () => (
     <SectionTitle centered>About</SectionTitle>
 
     <div css={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
-      <AboutCard nameTo='#' name='EssToo'/>
-      <AboutCard nameTo='#' name='Xavier'/>
+      <AboutCard nameTo='#' name='EssToo'>
+        <SocialIcon icon='soundcloud' link='#'/>
+        <SocialIcon icon='bandcamp' link='#'/>
+        <SocialIcon icon='facebook' link='#'/>
+        <SocialIcon icon='instagram' link='#'/>
+      </AboutCard>
+      <AboutCard nameTo='#' name='Xavier'>
+        <SocialIcon icon='soundcloud' link='#'/>
+        <SocialIcon icon='facebook' link='#'/>
+        <SocialIcon icon='instagram' link='#'/>
+      </AboutCard>
+        <AboutCard nameTo='#' name='Sandy'>
+          <SocialIcon icon='youtube-play' title="youtube" link='#'/>
+          <SocialIcon icon='facebook' link='#'/>
+          <SocialIcon icon='instagram' link='#'/>
+        </AboutCard>
     </div>
   </Section>
 )
@@ -118,7 +133,7 @@ const IndexPage = () => (
       css={{
         margin: '0 auto',
         maxWidth: 1200,
-        padding: '0px 1.0875rem 1.45rem',
+        padding: `0px ${rhythm(1.08)} ${rhythm(1.45)}`,
         paddingTop: 0,
       }}>
       <MusicSection/>

@@ -1,6 +1,8 @@
 import Typography from "typography"
 import moragaTheme from "typography-theme-moraga"
 
+import '../utils/font-awesome-4.7.0/css/font-awesome.min.css';
+
 moragaTheme.baseFontSize = '20px';
 moragaTheme.bodyColor = 'hsl(0, 0%, 0%)';
 moragaTheme.headerColor = 'hsl(0, 100%, 100%)';
@@ -21,9 +23,8 @@ moragaTheme.overrideThemeStyles = (data, options, styles) => {
     },
     'a': {
       textTransform: 'uppercase',
-      letterSpacing: data.rhythm(1 / 10),
       color: 'rgb(158, 158, 158)',
-      fontFamily: 'Oswald',
+      // fontFamily: 'Oswald',
       opacity: 0.5,
       // transition: 'opacity 0.1s ease-in',
       transition: 'color 0.1s ease-in',
