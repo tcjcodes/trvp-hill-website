@@ -1,3 +1,4 @@
+import React from 'react'
 import { rhythm } from '../utils/typography';
 import { Section, SectionTitle } from "./section";
 import { secondaryFont } from "../utils/fonts";
