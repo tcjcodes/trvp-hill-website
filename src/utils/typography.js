@@ -2,10 +2,12 @@ import Typography from "typography"
 import moragaTheme from "typography-theme-moraga"
 
 import '../utils/font-awesome-4.7.0/css/font-awesome.min.css';
+import { lightColor, darkColor } from './colors';
+
 
 moragaTheme.baseFontSize = '20px';
-moragaTheme.bodyColor = 'hsl(0, 0%, 0%)';
-moragaTheme.headerColor = 'hsl(0, 100%, 100%)';
+moragaTheme.bodyColor = darkColor;
+moragaTheme.headerColor = lightColor;
 moragaTheme.googleFonts.push({
   name: 'Lato',
   styles: ['200', '400', '400i', '700'],
@@ -18,13 +20,12 @@ moragaTheme.headerFontFamily.splice(0, 0, 'Lato');
 moragaTheme.overrideThemeStyles = (data, options, styles) => {
   return {
     body: {
-      backgroundColor: '#000',
-      color: '#fff',
+      backgroundColor: darkColor,
+      color: lightColor,
     },
     'a': {
       textTransform: 'uppercase',
       color: 'rgb(158, 158, 158)',
-      // fontFamily: 'Oswald',
       opacity: 0.5,
       transition: 'opacity 0.1s ease-in',
     },
@@ -40,7 +41,6 @@ moragaTheme.overrideThemeStyles = (data, options, styles) => {
     },
     'h1,h2,h3,h4,h5,h6': {
       textTransform: 'uppercase',
-      // color: '#a0a0a0',
       fontWeight: 400
     },
   };

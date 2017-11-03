@@ -1,5 +1,6 @@
 import { rhythm } from '../utils/typography';
 import { secondaryFont } from '../utils/fonts'
+import { lightColor, darkColor } from './colors';
 
 export const button = {
     opacity: '0.9',
@@ -18,7 +19,14 @@ export const button = {
 
 export const primaryButton = {
     ...button,
-    border: '3px solid #fff',
-    background: '#fff',
-    color: '#000',
-};
+    border: `3px solid ${lightColor}`,
+    background: lightColor,
+    color: darkColor,
+}
+
+export const primaryButtonOutline = {
+    ...button,
+    border: `3px solid ${lightColor}`,
+    background: darkColor,
+    color: lightColor,
+}
