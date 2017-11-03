@@ -26,15 +26,14 @@ moragaTheme.overrideThemeStyles = (data, options, styles) => {
       color: 'rgb(158, 158, 158)',
       // fontFamily: 'Oswald',
       opacity: 0.5,
-      // transition: 'opacity 0.1s ease-in',
-      transition: 'color 0.1s ease-in',
+      transition: 'opacity 0.1s ease-in',
     },
     'a:hover': {
       color: 'rgb(230, 230, 230)',
       textDecoration: 'none',
       boxShadow: 'none',
       opacity: 1,
-      transition: 'opacity 0.15s ease-in',
+      transition: 'opacity 0.1s ease-in',
     },
     'small a': {
       fontSize: data.rhythm(1 / 2)

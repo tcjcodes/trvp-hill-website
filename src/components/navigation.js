@@ -8,7 +8,7 @@ const NavLink = (props) => <li css={{display: `inline-block`, margin: `0 1rem 0 
 </li>
 
 const Navigation = () => (
-  <div css={{margin: `0 auto`, padding: `1rem 1rem`, position: 'fixed', width: '100%', background: '#000'}}>
+  <div css={{margin: `0 auto`, padding: `1rem 1rem`, position: 'fixed', width: '100%', background: 'transparent'}}>
     <header css={{}}>
       <ul css={{listStyle: `none`, float: `left`, margin: 0}}>
         <NavLink styles={{ fontWeight: 600, letterSpacing: rhythm(1/4) }} to="top">

@@ -2,6 +2,9 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import {rhythm} from '../utils/typography';
 import { secondaryFont } from "../utils/fonts";
+import asfalt from './asfalt.png';
+import coverPhoto from './DeathtoStock_IntotheLight-06.jpg';
+
 // import feather from '../utils/feather';
 
 const Section = (props) => (
@@ -18,10 +21,11 @@ const Section = (props) => (
     }}>{props.children}</section>
 )
 const SectionTitle = (props) => (
-  <div css={{marginBottom: rhythm(1 / 2), textAlign: props.centered ? 'center' : 'left'}}>
+  <div css={{textAlign: props.centered ? 'center' : 'left'}}>
     <h1 css={{
       ...secondaryFont,
       letterSpacing: rhythm(1 / 10),
+      marginBottom: rhythm(1 / 2)
     }}>
       {props.children}<br/>
       &mdash;
@@ -31,6 +35,11 @@ const SectionTitle = (props) => (
 
 const Hero = () => (
   <section id="top" css={{
+    background: `linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ), url(${coverPhoto}) repeat`,
+    backgroundSize: 'cover',
     width: '100%',
     height: '90vh',
     textAlign: 'center',
@@ -49,7 +58,7 @@ const MusicSection = () => (
   <Section id="music">
     <SectionTitle>MUSIC</SectionTitle>
     <div>
-      lOREM IPSUM
+      <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/216367084%3Fsecret_token%3Ds-2L6rY&amp;color=%23000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
     </div>
   </Section>
 )
@@ -112,9 +121,8 @@ const AboutSection = () => (
 const MerchSection = () => (
   <Section id="merch">
     <SectionTitle>Merch</SectionTitle>
-    <div>
-      todo
-
+    <div css={{maxWidth: '20%'}}>
+      <img src="http://via.placeholder.com/800x800" alt=""/>
     </div>
   </Section>
 )
