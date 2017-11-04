@@ -1,6 +1,7 @@
 import React from 'react'
 import { rhythm } from '../utils/typography';
 import { secondaryFont } from "../utils/fonts";
+import { darkColor } from '../utils/colors'
 
 const NavLink = (props) => <li css={{ display: `inline-block`, margin: `0 1rem 0 0`, fontWeight: 700 }}>
     <a css={{ ...props.styles }} href={'#' + props.to}>
@@ -10,8 +11,8 @@ const NavLink = (props) => <li css={{ display: `inline-block`, margin: `0 1rem 0
 
 const Navigation = () => (
     <div css={{
-        margin: `0 auto`, padding: `1rem 1rem`, position: 'fixed', width: '100%',
-        background: 'transparent', zIndex: 100
+        margin: `0 auto`, padding: `${rhythm(1/2)} 1rem`, position: 'fixed', width: '100%',
+        background: darkColor, zIndex: 100
     }}>
         <header css={{}}>
             <ul css={{ listStyle: `none`, float: `left`, margin: 0 }}>

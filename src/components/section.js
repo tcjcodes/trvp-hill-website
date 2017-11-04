@@ -9,8 +9,8 @@ export const Section = (props) => (
         id={props.id}
         css={{
             minHeight: '90vh',
-            marginTop: rhythm(1.5),
-            marginBottom: rhythm(1.5),
+            paddingTop: rhythm(1.5),
+            paddingBottom: rhythm(1.5),
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
