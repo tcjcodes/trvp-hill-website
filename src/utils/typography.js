@@ -4,13 +4,12 @@ import moragaTheme from "typography-theme-moraga"
 import '../utils/font-awesome-4.7.0/css/font-awesome.min.css';
 import { lightColor, darkColor } from './colors';
 
-
 moragaTheme.baseFontSize = '20px';
 moragaTheme.bodyColor = darkColor;
 moragaTheme.headerColor = lightColor;
 moragaTheme.googleFonts.push({
   name: 'Lato',
-  styles: ['200', '400', '400i', '700'],
+  styles: ['200', '400'],
 });
 moragaTheme.googleFonts.push({
   name: 'Oswald',

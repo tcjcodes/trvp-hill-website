@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "author": "Trina",
   "dependencies": {
-    "gatsby": "^1.9.73",
-    "gatsby-link": "^1.6.22",
-    "gatsby-plugin-glamor": "^1.6.8",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-typography": "^1.7.10",
-    "normalize.css": "^7.0.0",
-    "react-parallax": "^1.5.0",
-    "typography-theme-moraga": "^0.15.10"
+    "gatsby": "1.9.73",
+    "gatsby-link": "1.6.22",
+    "gatsby-plugin-glamor": "1.6.8",
+    "gatsby-plugin-react-helmet": "1.0.8",
+    "gatsby-plugin-typography": "1.7.10",
+    "normalize.css": "7.0.0",
+    "react-parallax": "1.5.0",
+    "typography-theme-moraga": "0.15.10"
   },
   "keywords": [
     "gatsby"
@@ -26,7 +26,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
-    "gh-pages": "^1.0.0",
-    "prettier": "^1.7.4"
+    "gh-pages": "1.0.0",
+    "prettier": "1.7.4"
   }
 }
