@@ -19,7 +19,7 @@ const Hero = () => (
     }}>
         <Parallax bgImage={coverPhoto}
                   bgStyle={{ objectFit: 'cover', marginTop: rhythm(-3/2) }}
-                  blur={{ min: -10, max: 5 }}
+                  blur={{ min: -5, max: 4 }}
                   strength={300}>
             <div css={{
                 background: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6))',

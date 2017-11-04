@@ -1,14 +1,16 @@
 import React from 'react'
 import { rhythm } from '../utils/typography';
+import SocialIcon from './social-icon'
 
 const Footer = () => (
-    <div css={{ textAlign: 'center', padding: rhythm(1 / 4), marginTop: rhythm(5) }}>
-        <p>
-
-        </p>
+    <div css={{ textAlign: 'center', marginTop: rhythm(4) }}>
         <small css={{ opacity: 0.5, textTransform: 'uppercase', letterSpacing: rhythm(1 / 9) }}>
-            TRVPHILL. Copyright {(new Date().getFullYear())}.
+            TRVPHILL, &copy; Copyright {(new Date().getFullYear())}.
         </small>
+        <p css={{ marginTop: rhythm(1 / 2), marginBottom: 0 }}>
+            <SocialIcon icon='soundcloud' link='#'/>
+            <SocialIcon icon='facebook' link='#'/>
+        </p>
     </div>
 )
 

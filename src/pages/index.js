@@ -5,14 +5,7 @@ import Hero from '../components/hero';
 import MusicSection from "../components/music-section";
 import MerchSection from '../components/merch-section';
 import AboutSection from '../components/about-section';
-// import feather from '../utils/feather';
-
-const Footer = () => (
-  <div css={{textAlign: 'center', padding: rhythm(1 / 4), marginTop: rhythm(5)}}>
-    <small css={{opacity: 0.5, textTransform: 'uppercase', letterSpacing: rhythm(1 / 9)}}>TRVPHILL. Copyright 2017.
-    </small>
-  </div>
-)
+import Footer from '../components/footer'
 
 const IndexPage = () => (
   <div>
