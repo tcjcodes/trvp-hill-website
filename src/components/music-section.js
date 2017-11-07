@@ -6,6 +6,7 @@ import { lightColor } from '../utils/colors'
 const handleClick = (e) => {
     e.preventDefault();
 }
+
 const MusicSection = () => (
     <Section id="music">
         <SectionTitle centered>MUSIC</SectionTitle>

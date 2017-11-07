@@ -4,23 +4,36 @@ import Helmet from 'react-helmet'
 import { rhythm } from '../utils/typography';
 import 'normalize.css';
 
-const TemplateWrapper = ({children}) => (
-  <div>
-    <Helmet
-      title="T R V P x H I L L"
-      meta={[
-        {name: 'description', content: 'Official website of TRVPHILL'},
-        {name: 'keywords', content: 'tacoma, olympia, washington, seattle, capitol hill, rap, trap, hip hop, music'},
-      ]}
-    />
+const TemplateWrapper = ({ children, data }) => (
     <div>
-      {children()}
+        <Helmet
+            title={data.site.siteMetadata.spacedTitle}
+            meta={[
+                { name: 'description', content: data.site.siteMetadata.description },
+                { name: 'keywords', content: data.site.siteMetadata.keywords },
+            ]}
+        />
+        <div>
+            {children()}
+        </div>
     </div>
-  </div>
 )
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+    data: PropTypes.object.isRequired,
+    children: PropTypes.func,
 }
+
+export const query = graphql`
+    query TemplateWrapperQuery {
+        site {
+            siteMetadata {
+                spacedTitle,
+                keywords,
+                description,
+            }
+        }
+    }
+`
 
 export default TemplateWrapper

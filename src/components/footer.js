@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { rhythm } from '../utils/typography';
 import SocialIcon from './social-icon'
 
-const Footer = () => (
+const Footer = ({ data }) => (
     <div css={{ textAlign: 'center', marginTop: rhythm(5) }}>
         <small css={{ opacity: 0.5, letterSpacing: rhythm(1 / 9) }}>
-            TRVPxHILL. &copy; COPYRIGHT {(new Date().getFullYear())}.
+            TRVPHILL. &copy; COPYRIGHT {(new Date().getFullYear())}.
         </small>
         <div css={{ marginTop: rhythm(1 / 2) }}>
             <SocialIcon icon='soundcloud' link='#'/>
@@ -15,4 +16,8 @@ const Footer = () => (
     </div>
 )
 
-export default Footer;
+Footer.propTypes = {
+    data: PropTypes.object,
+}
+
+export default Footer

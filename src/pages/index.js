@@ -8,7 +8,7 @@ import AboutSection from '../components/about-section';
 import Footer from '../components/footer'
 import Navigation from '../components/navigation'
 
-export default class IndexPageContainer extends React.Component {
+class IndexPageContainer extends React.Component {
     constructor(props) {
         super(props)
         this.handleEnter = this.handleEnter.bind(this);
@@ -17,8 +17,6 @@ export default class IndexPageContainer extends React.Component {
     }
 
     handleEnter(params) {
-        console.log('entered', JSON.stringify(params));
-
         if (this.state.activeWaypoints.indexOf(params.id) < 0) {
             this.setState((prevState) => ({
                 activeWaypoints: [...prevState.activeWaypoints, params.id],
@@ -27,7 +25,6 @@ export default class IndexPageContainer extends React.Component {
     }
 
     handleLeave(params) {
-        console.log('left', JSON.stringify(params));
         this.setState((prevState) => ({
             activeWaypoints: prevState.activeWaypoints.filter(w => w !== params.id)
         }));
@@ -66,4 +63,6 @@ IndexPage.propTypes = {
     onWaypointEnter: PropTypes.func,
     onWaypointLeave: PropTypes.func,
 }
-// export default IndexPage
+
+export default IndexPageContainer
+
