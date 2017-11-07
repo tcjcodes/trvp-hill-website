@@ -8,27 +8,26 @@ import { lightColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
 
 const AboutCard = (props) => (
-    <div css={{ maxWidth: '500px', margin: `${rhythm(1/2)}` }}>
+    <div css={{ maxWidth: '500px', maxHeight: '500px', margin: `${rhythm(1/2)} ${rhythm(3 / 2)}` }}>
         <div css={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <img css={{
-                ...zoomOnHover,
-                width: '80%',
-                height: '80%',
-                objectFit: 'fill',
-                borderRadius: '50%',
-                border: `${rhythm(1 / 3)} solid ${lightColor}`
-            }}
-                 src="http://via.placeholder.com/800x800" alt=""/>
+            <div css={{ width: '100%', }}>
+                <img css={{
+                    ...zoomOnHover,
+                    objectFit: 'fill',
+                    borderRadius: '50%',
+                    border: `${rhythm(1 / 3)} solid ${lightColor}`
+                }}
+                     src="http://via.placeholder.com/800x800" alt=""/>
+            </div>
         </div>
 
         <div css={{ textAlign: 'center' }}>
             <div css={{ marginBottom: rhythm(1 / 2), fontSize: rhythm(7 / 10) }}>
                 <span css={{ ...secondaryFont, letterSpacing: rhythm(2 / 10) }} href={props.nameTo}>{props.name}</span>
             </div>
-            <p css={{ fontSize: rhythm(2/3) }}>
+            <p css={{ fontSize: rhythm(2 / 3) }}>
                 Purr for no reason rub face on everything, and sit on human or spill litter box, scratch at owner,
-                destroy
-                all furniture, especially couch.
+                destroy all furniture, especially couch.
             </p>
             <div css={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                 {props.children}
@@ -45,7 +44,9 @@ AboutCard.propTypes = {
 const AboutSection = () => (
     <Section id="about">
         <SectionTitle centered>About</SectionTitle>
-
+        <p css={{ textAlign: 'center', fontSize: rhythm(4 / 5), lineHeight: rhythm(1) }}>TRVPxHILL is a hip hop group
+            based out of the Pacific
+            Northwest.</p>
         <div css={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
             <AboutCard nameTo='#' name='EssToo'>
                 <SocialIcon icon='soundcloud' link='#'/>

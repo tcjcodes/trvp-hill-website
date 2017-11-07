@@ -1,8 +1,11 @@
 import React from 'react'
-import { rhythm } from '../utils/typography';
-import { secondaryFont } from "../utils/fonts";
+import PropTypes from 'prop-types'
+import Waypoint from 'react-waypoint'
+import { rhythm } from '../utils/typography'
+import { secondaryFont } from "../utils/fonts"
 
-// todo transparent at top, black on scroll, fix opacity
+const handleWaypointEnter = (id) => console.log(`${id} entered`)
+const handleWaypointLeave = (id) => console.log(`${id} left`)
 
 export const Section = (props) => (
     <section
@@ -15,8 +18,15 @@ export const Section = (props) => (
             flexDirection: 'column',
             justifyContent: 'center',
             letterSpacing: '1px'
-        }}>{props.children}</section>
+        }}>
+        <Waypoint>
+            <div>
+                {props.children}
+            </div>
+        </Waypoint>
+    </section>
 )
+
 export const SectionTitle = (props) => (
     <div css={{ textAlign: props.centered ? 'center' : 'left' }}>
         <h1 css={{

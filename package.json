@@ -11,6 +11,7 @@
     "gatsby-plugin-typography": "1.7.10",
     "normalize.css": "7.0.0",
     "react-parallax": "1.5.0",
+    "react-waypoint": "^7.3.1",
     "typography-theme-moraga": "0.15.10"
   },
   "keywords": [
