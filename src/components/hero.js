@@ -4,6 +4,7 @@ import Waypoint from 'react-waypoint'
 import { rhythm } from '../utils/typography'
 import { Background, Parallax } from 'react-parallax'
 import coverPhoto from './DeathtoStock_IntotheLight-06.jpg'
+import { navHeight } from './navigation'
 
 const id = 'hero';
 
@@ -17,7 +18,8 @@ const Hero = (props) => {
                       bgStyle={{ objectFit: 'cover', marginTop: rhythm(-3 / 2) }}
                       strength={300}>
                 <Waypoint onEnter={(e) => props.onWaypointEnter({ e, id })}
-                          onLeave={(e) => props.onWaypointLeave({ e, id })}>
+                          onLeave={(e) => props.onWaypointLeave({ e, id })}
+                          topOffset={navHeight} >
                     <div css={{
                         background: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6))',
                         height: '100vh',

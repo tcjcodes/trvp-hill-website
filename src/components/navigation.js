@@ -3,6 +3,8 @@ import { rhythm } from '../utils/typography';
 import { secondaryFont } from "../utils/fonts";
 import { darkColor } from '../utils/colors'
 
+export const navHeight = '50px';
+
 const NavLink = (props) => <li css={{ display: `inline-block`, margin: `0 1rem 0 0`, fontWeight: 700 }}>
     <a css={{ ...props.styles }} href={'#' + props.to}>
         {props.children}
@@ -11,7 +13,11 @@ const NavLink = (props) => <li css={{ display: `inline-block`, margin: `0 1rem 0
 
 const Navigation = (props) => (
     <div css={{
-        margin: `0 auto`, padding: `${rhythm(1 / 2)} 1rem`, position: 'fixed', width: '100%',
+        margin: `0 auto`,
+        height: navHeight,
+        padding: `${rhythm(1 / 2)} ${rhythm(1)}`,
+        position: 'fixed',
+        width: '100%',
         background: props.activeWaypoints.indexOf('hero') >= 0 ? 'transparent' : darkColor,
         zIndex: 100
     }}>
@@ -35,6 +41,7 @@ const Navigation = (props) => (
                 <NavLink to="music">music</NavLink>
                 <NavLink to="merch">merch</NavLink>
                 <NavLink to="about">about</NavLink>
+                <NavLink to="contact">contact</NavLink>
             </ul>
         </header>
     </div>

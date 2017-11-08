@@ -31,7 +31,24 @@ const textareaCss = {
     width: '95%',
 };
 
-class TextFormGroup extends React.Component {
+const TextInput = (props) => (
+    <div css={{
+        marginBottom: `${rhythm(1)}`,
+        width: '45%',
+        display: 'inline-block',
+        marginRight: rhythm(1)
+    }}>
+        <label css={labelCss} htmlFor={props.name}>{props.label}</label>
+        <br/>
+        <input
+            css={inputCss}
+            name={props.name}
+            type={props.type || 'text'}
+            value={props.value}
+            onChange={props.onChange} />
+    </div>
+)
+class TextInputContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = { value: '' };
@@ -43,27 +60,26 @@ class TextFormGroup extends React.Component {
     }
 
     render() {
-        return (
-            <div css={{
-                marginBottom: `${rhythm(1)}`,
-                width: '45%',
-                display: 'inline-block',
-                marginRight: rhythm(1)
-            }}>
-                <label css={labelCss} htmlFor={this.props.name}>{this.props.label}</label>
-                <br/>
-                <input
-                    css={inputCss}
-                    name={this.props.name}
-                    type={this.props.type || 'text'}
-                    value={this.state.value}
-                    onChange={this.handleChange}/>
-            </div>
-        )
+        return (<TextInput
+            label={this.props.label}
+            name={this.props.name}
+            onChange={this.handleChange}
+            value={this.state.value}/>)
     }
 }
 
-class TextareaFormGroup extends React.Component {
+const TextareaInput = (props) => (
+    <div css={{}}>
+        <label css={labelCss} htmlFor={props.name}>{props.label}</label>
+        <br/>
+        <textarea
+            css={textareaCss}
+            name={props.name}
+            value={props.value}
+            onChange={props.onChange}/>
+    </div>
+)
+class TextareaInputContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = { value: '' };
@@ -75,17 +91,11 @@ class TextareaFormGroup extends React.Component {
     }
 
     render() {
-        return (
-            <div css={{}}>
-                <label css={labelCss} htmlFor={this.props.name}>{this.props.label}</label>
-                <br/>
-                <textarea
-                    css={textareaCss}
-                    name={this.props.name}
-                    value={this.state.value}
-                    onChange={this.handleChange}/>
-            </div>
-        )
+        return (<TextareaInput
+            label={this.props.label}
+            name={this.props.name}
+            onChange={this.handleChange}
+            value={this.state.value}/>)
     }
 }
 
@@ -97,22 +107,23 @@ export default class ContactContainer extends React.Component {
     }
 
     handleSubmit(event) {
+        console.log('form submitted')
         event.preventDefault();
     }
 
     render() {
         return (
-            <Section>
+            <Section id='contact'>
                 <div css={{
                     width: '800px',
                 }}>
                     <SectionTitle>Contact</SectionTitle>
                     <form css={{}}
                           onSubmit={this.handleSubmit}>
-                        <TextFormGroup name='name' label='Name'/>
-                        <TextFormGroup name='email' label='Email' type='email'/>
-                        <TextareaFormGroup name='message' label='Message'/>
-                        <button css={{ ...primaryButton, marginTop: rhythm(1 / 2), }}>SUBMIT</button>
+                        <TextInputContainer name='name' label='Name' />
+                        <TextInputContainer name='email' label='Email' type='email'/>
+                        <TextareaInputContainer name='message' label='Message'/>
+                        <button type='submit' css={{ ...primaryButton, marginTop: rhythm(1 / 2), }}>SUBMIT</button>
                     </form>
                 </div>
             </Section>
