@@ -3,7 +3,7 @@ import { rhythm } from '../utils/typography';
 import { Section, SectionTitle } from "./section";
 import { primaryButton } from '../utils/buttons'
 
-import jacket from './mockjacket.png';
+import jacket from './images/mockjacket.png';
 import { lightColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
 

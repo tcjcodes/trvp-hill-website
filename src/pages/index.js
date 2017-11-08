@@ -50,9 +50,9 @@ const IndexPage = (props) => (
                     padding: `0px ${rhythm(1.08)} ${rhythm(1.45)}`,
                     paddingTop: 0,
                 }}>
-                <AboutSection/>
                 <MusicSection/>
                 <MerchSection/>
+                <AboutSection/>
                 <ContactContainer/>
                 <Footer/>
             </div>

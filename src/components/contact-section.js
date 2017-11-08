@@ -17,6 +17,10 @@ const sharedInputCss = {
     color: lightColor,
     background: 'transparent',
     fontSize: rhythm(6 / 10),
+    '&:focus': {
+        outline: 'none',
+        borderBottomWidth: '2px',
+    },
 }
 const textInputCss = {
     ...sharedInputCss,

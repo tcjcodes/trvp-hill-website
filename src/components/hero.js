@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Waypoint from 'react-waypoint'
 import { rhythm } from '../utils/typography'
 import { Background, Parallax } from 'react-parallax'
-import coverPhoto from './DeathtoStock_IntotheLight-06.jpg'
+import coverPhoto from './images/stockhero_2400x1600.png'
 import { navHeight } from './navigation'
 
 const id = 'hero';
@@ -14,7 +14,44 @@ const Hero = (props) => {
         <section id="top" css={{
             textAlign: 'center',
         }}>
-            <Parallax bgImage={coverPhoto}
+            <div>
+                <Parallax strength={350}>
+                    <Background>
+                        <div css={{ width: '120vw', }}>
+                            <img src={coverPhoto}/>
+                        </div>
+                    </Background>
+                    <Waypoint onEnter={(e) => props.onWaypointEnter({ e, id })}
+                              onLeave={(e) => props.onWaypointLeave({ e, id })}
+                              topOffset={navHeight} >
+                        <div css={{
+                            background: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.65))',
+                            height: '100vh',
+                        }}>
+                            <div css={{
+                                position: 'absolute',
+                                width: '100%',
+                                height: '100%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignContent: 'center',
+                            }}>
+                                <h1 css={{
+                                    textShadow: '0 4px 12px rgba(0, 0, 0, 0.8)',
+                                    fontSize: rhythm(2.8),
+                                    fontWeight: 600,
+                                    letterSpacing: rhythm(3 / 2),
+                                    textTransform: 'none'
+                                }}>
+                                    TRVPHILL
+                                </h1>
+                            </div>
+                        </div>
+                    </Waypoint>
+                </Parallax>
+            </div>
+            {/*<Parallax bgImage={coverPhoto}
                       bgStyle={{ objectFit: 'cover', marginTop: rhythm(-3 / 2) }}
                       strength={300}>
                 <Waypoint onEnter={(e) => props.onWaypointEnter({ e, id })}
@@ -45,7 +82,7 @@ const Hero = (props) => {
                         </div>
                     </div>
                 </Waypoint>
-            </Parallax>
+            </Parallax>*/}
         </section>
     )
 }
