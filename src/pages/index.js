@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { rhythm } from '../utils/typography';
+import Navigation from '../components/navigation'
+import ContactContainer from '../components/contact-section'
 import Hero from '../components/hero';
 import MusicSection from "../components/music-section";
 import MerchSection from '../components/merch-section';
 import AboutSection from '../components/about-section';
 import Footer from '../components/footer'
-import Navigation from '../components/navigation'
 
 class IndexPageContainer extends React.Component {
     constructor(props) {
@@ -49,9 +50,10 @@ const IndexPage = (props) => (
                     padding: `0px ${rhythm(1.08)} ${rhythm(1.45)}`,
                     paddingTop: 0,
                 }}>
+                <AboutSection/>
                 <MusicSection/>
                 <MerchSection/>
-                <AboutSection/>
+                <ContactContainer/>
                 <Footer/>
             </div>
         </div>

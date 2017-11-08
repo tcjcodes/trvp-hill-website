@@ -8,9 +8,9 @@ import { lightColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
 
 const AboutCard = (props) => (
-    <div css={{ maxWidth: '500px', maxHeight: '500px', margin: `${rhythm(1/2)} ${rhythm(3 / 2)}` }}>
+    <div css={{ margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}` }}>
         <div css={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div css={{ width: '100%', }}>
+            <div css={{ }}>
                 <img css={{
                     ...zoomOnHover,
                     objectFit: 'fill',
@@ -44,10 +44,17 @@ AboutCard.propTypes = {
 const AboutSection = () => (
     <Section id="about">
         <SectionTitle centered>About</SectionTitle>
-        <p css={{ textAlign: 'center', fontSize: rhythm(4 / 5), lineHeight: rhythm(1) }}>TRVPxHILL is a hip hop group
-            based out of the Pacific
-            Northwest.</p>
-        <div css={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
+        <p css={{
+            textAlign: 'center',
+            fontSize: rhythm(4 / 5),
+            lineHeight: rhythm(1)
+        }}>TRVPxHILL is a hip hop group based out of the Pacific Northwest.</p>
+        <div css={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            flexBasis: '360px'
+        }}>
             <AboutCard nameTo='#' name='EssToo'>
                 <SocialIcon icon='soundcloud' link='#'/>
                 <SocialIcon icon='bandcamp' link='#'/>
