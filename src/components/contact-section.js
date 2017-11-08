@@ -6,26 +6,25 @@ import { secondaryFont } from '../utils/fonts'
 import { primaryButton } from '../utils/buttons'
 
 const labelCss = {
+    ...secondaryFont,
     fontSize: rhythm(4 / 5),
-    ...secondaryFont
 }
-const inputCss = {
+const sharedInputCss = {
+    letterSpacing: '1px',
     border: 0,
     borderBottom: `1px solid ${lightColor}`,
-    padding: `${rhythm(1 / 4)} 0`,
+    padding: `${rhythm(1 / 3)} 0`,
     color: lightColor,
     background: 'transparent',
     fontSize: rhythm(6 / 10),
+}
+const textInputCss = {
+    ...sharedInputCss,
     width: '100%',
 };
-const textareaCss = {
-    border: 0,
-    borderBottom: `1px solid ${lightColor}`,
+const textareaInputCss = {
+    ...sharedInputCss,
     margin: `${rhythm(1 / 3)} 0 ${rhythm(1)} 0`,
-    padding: `${rhythm(1 / 4)} 0`,
-    color: lightColor,
-    background: 'transparent',
-    fontSize: rhythm(6 / 10),
     resize: 'none',
     height: rhythm(8),
     width: '95%',
@@ -41,13 +40,14 @@ const TextInput = (props) => (
         <label css={labelCss} htmlFor={props.name}>{props.label}</label>
         <br/>
         <input
-            css={inputCss}
+            css={textInputCss}
             name={props.name}
             type={props.type || 'text'}
             value={props.value}
-            onChange={props.onChange} />
+            onChange={props.onChange}/>
     </div>
 )
+
 class TextInputContainer extends React.Component {
     constructor(props) {
         super(props)
@@ -73,12 +73,13 @@ const TextareaInput = (props) => (
         <label css={labelCss} htmlFor={props.name}>{props.label}</label>
         <br/>
         <textarea
-            css={textareaCss}
+            css={textareaInputCss}
             name={props.name}
             value={props.value}
             onChange={props.onChange}/>
     </div>
 )
+
 class TextareaInputContainer extends React.Component {
     constructor(props) {
         super(props)
@@ -107,7 +108,7 @@ export default class ContactContainer extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log('form submitted')
+        alert('form submitted')
         event.preventDefault();
     }
 
@@ -118,9 +119,9 @@ export default class ContactContainer extends React.Component {
                     width: '800px',
                 }}>
                     <SectionTitle>Contact</SectionTitle>
-                    <form css={{}}
+                    <form css={{ marginTop: rhythm(1) }}
                           onSubmit={this.handleSubmit}>
-                        <TextInputContainer name='name' label='Name' />
+                        <TextInputContainer name='name' label='Name'/>
                         <TextInputContainer name='email' label='Email' type='email'/>
                         <TextareaInputContainer name='message' label='Message'/>
                         <button type='submit' css={{ ...primaryButton, marginTop: rhythm(1 / 2), }}>SUBMIT</button>

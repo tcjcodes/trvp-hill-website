@@ -14,7 +14,7 @@ const MerchSection = () => (
             <div>
                 <SectionTitle>Merch</SectionTitle>
 
-                <p css={{ fontSize: rhythm(9 / 10), marginBottom: rhythm(1/4) }}>
+                <p css={{ fontSize: rhythm(9 / 10), marginBottom: rhythm(1 / 4) }}>
                     <strong css={{ letterSpacing: rhythm(1 / 9) }}>TH BOMBER JACKET</strong>
                 </p>
                 <p css={{ fontSize: rhythm(4 / 5) }}>Rep your city and get cozy in a TH fit.</p>
@@ -26,7 +26,8 @@ const MerchSection = () => (
                     '&:hover': {
                         cursor: 'not-allowed',
                     },
-                }}>COMING SOON</button>
+                }}>COMING SOON
+                </button>
                 {/*<button css={{
                     ...primaryButton,
                     ...zoomOnHover,
@@ -34,10 +35,10 @@ const MerchSection = () => (
                     marginTop: rhythm(1 / 2)
                 }}>BUY NOW</button>*/}
             </div>
-            <div css={{ marginTop: rhythm(1 / 2) }}>
+            <div css={{ margin: `${rhythm(1 / 2)} 0 0 ${rhythm(3)}` }}>
                 <div css={{ maxWidth: '500px' }}>
                     <img css={{
-                        border: `${rhythm(1/4)} solid ${lightColor}`,
+                        border: `${rhythm(1 / 4)} solid ${lightColor}`,
                         ...zoomOnHover
                     }} src={jacket} alt="TH Bomber Jacket"/>
                 </div>
