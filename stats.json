@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-4e4e192959c55702a25e.js",
-      "component---src-pages-index-js-4e4e192959c55702a25e.js.map"
+      "component---src-pages-index-js-16ba703b6855251619fc.js",
+      "component---src-pages-index-js-16ba703b6855251619fc.js.map"
     ],
     "path---": [
       "path----e10083dea3dbb6306bcf.js",
@@ -31,9 +31,9 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-2e035dc051947471ae8b.js",
+      "app-90cf8865f04b960e3211.js",
       "build-js-styles.css",
-      "app-2e035dc051947471ae8b.js.map",
+      "app-90cf8865f04b960e3211.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [
