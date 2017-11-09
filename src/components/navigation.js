@@ -10,7 +10,7 @@ export const navHeight = '50px';
 
 const NavLink = (props) =>
     <li css={{ display: `inline-block`, margin: `0 1rem 0 0`, fontWeight: 700 }}>
-        <Scrollchor to={props.to}>{props.children}</Scrollchor>
+        <Scrollchor css={props.styles} to={props.to}>{props.children}</Scrollchor>
     </li>
 
 const Navigation = (props) => (
