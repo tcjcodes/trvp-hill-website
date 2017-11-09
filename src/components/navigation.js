@@ -1,14 +1,16 @@
 import React from 'react'
 import { rhythm } from '../utils/typography';
+import Scrollchor from 'react-scrollchor'
+
 import { secondaryFont } from "../utils/fonts";
 import { darkColor } from '../utils/colors'
 
 export const navHeight = '50px';
 
 const NavLink = (props) => <li css={{ display: `inline-block`, margin: `0 1rem 0 0`, fontWeight: 700 }}>
-    <a css={{ ...props.styles }} href={'#' + props.to}>
+    <Scrollchor css={{ ...props.styles }} to={props.to}>
         {props.children}
-    </a>
+    </Scrollchor>
 </li>
 
 const Navigation = (props) => (
