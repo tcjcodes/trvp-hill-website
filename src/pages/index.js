@@ -43,19 +43,11 @@ const IndexPage = (props) => (
         <Navigation activeWaypoints={props.activeWaypoints}/>
         <div>
             <Hero onWaypointEnter={props.onWaypointEnter} onWaypointLeave={props.onWaypointLeave}/>
-            <div
-                css={{
-                    margin: '0 auto',
-                    maxWidth: 1200,
-                    padding: `0px ${rhythm(1.08)} ${rhythm(1.45)}`,
-                    paddingTop: 0,
-                }}>
-                <MusicSection/>
-                <MerchSection/>
-                <AboutSection/>
-                <ContactContainer/>
-                <Footer/>
-            </div>
+            <MusicSection/>
+            <MerchSection/>
+            <AboutSection/>
+            <ContactContainer/>
+            <Footer/>
         </div>
     </div>
 )

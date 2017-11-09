@@ -8,9 +8,9 @@ import { lightColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
 
 const AboutCard = (props) => (
-    <div css={{ margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}` }}>
+    <div css={{ margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}`, maxWidth: '400px' }}>
         <div css={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div css={{ }}>
+            <div css={{ padding: `0 ${rhythm(1 / 2)}` }}>
                 <img css={{
                     ...zoomOnHover,
                     objectFit: 'fill',
@@ -53,7 +53,8 @@ const AboutSection = () => (
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
-            flexBasis: '360px'
+            flexBasis: '360px',
+            maxWidth: 1200,
         }}>
             <AboutCard nameTo='#' name='EssToo'>
                 <SocialIcon icon='soundcloud' link='#'/>

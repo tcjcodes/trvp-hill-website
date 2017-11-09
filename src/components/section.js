@@ -18,7 +18,8 @@ export const Section = (props) => (
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            letterSpacing: '1px'
+            letterSpacing: '1px',
+            ...props.styles
         }}>
         <Waypoint>
             <div>
