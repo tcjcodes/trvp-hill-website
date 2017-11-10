@@ -13,7 +13,7 @@ const sharedImgCss = {
     border: `${rhythm(1 / 4)} solid ${lightColor}`,
 }
 const sharedWrapperCss = {
-    margin: `0 ${rhythm(1 / 2)}`,
+    margin: `0 ${rhythm(1)}`,
 }
 const sharedButtonCss = {
     ...primaryButton,

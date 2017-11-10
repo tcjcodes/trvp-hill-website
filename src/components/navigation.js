@@ -1,16 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { rhythm } from '../utils/typography';
 import Scrollchor from 'react-scrollchor'
-
 import { secondaryFont } from "../utils/fonts";
 import { darkColor } from '../utils/colors'
-import { Desktop } from '../utils/responsive'
 
-export const navHeight = '50px';
+export const navHeight = '55px';
 
 const NavLink = (props) =>
     <li css={{ display: `inline-block`, margin: `0 1rem 0 0`, fontWeight: 700 }}>
-        <Scrollchor css={props.styles} to={props.to}>{props.children}</Scrollchor>
+        <Scrollchor to={props.to}>{props.children}</Scrollchor>
     </li>
 
 const Navigation = (props) => (
@@ -30,48 +29,28 @@ const Navigation = (props) => (
                 margin: 0,
             }}>
                 {props.activeWaypoints.indexOf('hero') < 0 &&
-                <NavLink styles={{ fontWeight: 600, letterSpacing: rhythm(1 / 4) }} to="top">
+                <NavLink to="top">
                     <span css={{
+                        fontWeight: 600,
+                        letterSpacing: rhythm(1 / 4),
                         display: `inline`,
-                        fontWeight: 'bold',
-                        fontSize: props.isMobile ? rhythm(1) : rhythm(3 / 4) ,
                         textTransform: 'none',
-                    }}>{props.isMobile ? 'TH' : 'TRVPHILL'}</span>
+                    }}>TRVPHILL</span>
                 </NavLink>}
             </ul>}
 
-            {!props.isMobile &&
             <ul css={{ listStyle: `none`, float: `right`, margin: 0, ...secondaryFont, letterSpacing: rhythm(1 / 10) }}>
                 <NavLink to="music">music</NavLink>
                 <NavLink to="merch">merch</NavLink>
                 <NavLink to="about">about</NavLink>
                 <NavLink to="contact">contact</NavLink>
-            </ul>}
-            {props.isMobile && <button
-                className='fa fa-bars'
-                css={{
-                    float: 'right',
-                    background: 'transparent',
-                    color: 'rgb(158, 158, 158)',
-                    opacity: 0.5,
-                    border: '0',
-                    margin: 0,
-                    cursor: 'pointer',
-                    '&:hover': {
-                        cursor: 'pointer'
-                    },
-                    '&:focus': {
-                        opacity: 1,
-                        outline: 0,
-                        background: 'transparent',
-                    },
-                }}
-                onClick={(e) => e.preventDefault()} />}
+            </ul>
         </header>
     </div>
 )
 
-const ResponsiveNavigation = (props) =>
-    <Desktop>{(matches) => <Navigation isMobile={!matches} {...props} />}</Desktop>
+Navigation.propTypes = {
+    activeWaypoints: PropTypes.array,
+}
 
-export default ResponsiveNavigation;
+export default Navigation;

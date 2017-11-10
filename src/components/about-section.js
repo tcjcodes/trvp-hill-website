@@ -29,7 +29,7 @@ const AboutCard = (props) => (
             <div css={{
                 marginBottom: rhythm(1 / 2),
                 fontSize: rhythm(1),
-                letterSpacing: rhythm(2 / 10),
+                letterSpacing: rhythm(1 / 5),
             }}>{props.name}</div>
 
             <div css={{
@@ -56,7 +56,8 @@ const AboutSection = (props) => (
         <p css={{
             textAlign: 'center',
             fontSize: rhythm(4 / 5),
-            lineHeight: rhythm(1)
+            lineHeight: rhythm(1),
+            padding: `0 ${rhythm(1)}`
         }}>TRVPxHILL is a hip hop group based out of the Pacific Northwest.</p>
         <div css={{
             display: 'flex',

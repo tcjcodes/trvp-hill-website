@@ -3,7 +3,7 @@ import { rhythm } from '../utils/typography';
 import { Section, SectionTitle } from './section'
 import { darkSecondaryColor } from '../utils/colors'
 import { primaryButton } from '../utils/buttons'
-import { DefaultResponsive, Desktop } from '../utils/responsive'
+import { Desktop } from '../utils/responsive'
 import { TextareaInputContainer, TextInputContainer } from './contact-inputs'
 
 class ContactContainer extends React.Component {

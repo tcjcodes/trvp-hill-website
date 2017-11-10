@@ -21,7 +21,7 @@ const id = 'hero';
 const HeroWaypoint = ({ children, onWaypointEnter, onWaypointLeave }) =>
     <Waypoint onEnter={(e) => onWaypointEnter({ e, id })}
               onLeave={(e) => onWaypointLeave({ e, id })}
-              topOffset={navHeight}>{children}</Waypoint>
+              topOffset={navHeight}><div>{children}</div></Waypoint>
 
 const Hero = (props) => (
     <Desktop>
@@ -38,6 +38,7 @@ const Hero = (props) => (
                         flexDirection: isTablet ? 'row' : 'column',
                         justifyContent: 'center',
                         alignItems: 'center',
+                        flexWrap: 'wrap',
                         paddingLeft: rhythm(1),
                         ...sharedTextCss,
                     }}>

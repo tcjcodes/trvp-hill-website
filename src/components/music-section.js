@@ -9,16 +9,17 @@ const handleClick = (e) => {
     e.preventDefault();
 }
 
+const albumArt = "http://via.placeholder.com/400x400";
 const MusicSection = (props) => (
     <Section id="music">
         <SectionTitle centered>MUSIC</SectionTitle>
         {props.isMobile && <div css={{
             textAlign: 'center',
             marginTop: rhythm(1),
-            padding: `0 ${rhythm(1 / 2)}`,
+            padding: `0 ${rhythm(1)}`,
         }}>
             <div>
-                <img src="http://via.placeholder.com/300x300" alt="Album Art"
+                <img src={albumArt} alt="Album Art"
                      css={{
                          border: `${rhythm(1 / 4)} solid ${lightColor}`,
                      }}/>
@@ -27,6 +28,7 @@ const MusicSection = (props) => (
                     title='Play song'
                     css={{
                         ...secondaryFont,
+                        letterSpacing: '2px',
                         fontSize: rhythm(1),
                         cursor: 'pointer',
                         color: lightSecondaryColor,
@@ -50,7 +52,7 @@ const MusicSection = (props) => (
             borderRadius: '3px'
         }}>
             <img css={{ float: 'left', margin: 0, width: rhythm(3), height: rhythm(3) }}
-                 src="http://via.placeholder.com/300x300" alt="Album Art"/>
+                 src={albumArt} alt="Album Art"/>
             <div css={{ display: 'inline' }}>
                 <div css={{
                     padding: rhythm(2 / 3),
@@ -76,19 +78,6 @@ const MusicSection = (props) => (
                 </div>
             </div>
         </div>}
-
-        {/*<div css={{ textAlign: 'center' }}>
-            <br/>
-            <a href='' onClick={handleClick}
-               css={{ fontSize: rhythm(7 / 10), letterSpacing: rhythm(1 / 4) }}>
-                <span className="fa fa-play"></span>{' '}
-                GIRLS GOIN (HAILEY)
-            </a>
-            <div css={{ display: 'none' }}>
-                <iframe width="100%" height="450" scrolling="no" frameborder="no"
-                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/216367084%3Fsecret_token%3Ds-2L6rY&amp;color=%23000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
-            </div>
-        </div>*/}
     </Section>
 );
 

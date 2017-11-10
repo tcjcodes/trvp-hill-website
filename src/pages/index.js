@@ -8,6 +8,7 @@ import MusicSection from "../components/music-section";
 import MerchSection from '../components/merch-section';
 import AboutSection from '../components/about-section';
 import Footer from '../components/footer'
+import { DefaultResponsive, Desktop, Tablet } from '../utils/responsive'
 
 class IndexPageContainer extends React.Component {
     constructor(props) {
@@ -40,7 +41,7 @@ class IndexPageContainer extends React.Component {
 
 const IndexPage = (props) => (
     <div>
-        <Navigation activeWaypoints={props.activeWaypoints}/>
+        <DefaultResponsive><Navigation activeWaypoints={props.activeWaypoints}/></DefaultResponsive>
         <div>
             <Hero onWaypointEnter={props.onWaypointEnter} onWaypointLeave={props.onWaypointLeave}/>
             <MusicSection/>
