@@ -5,18 +5,16 @@ import { rhythm } from '../utils/typography'
 import { Background, Parallax } from 'react-parallax'
 import coverPhoto from './images/stockhero_2400x1600.png'
 import { navHeight } from './navigation'
-import { Desktop } from '../utils/responsive'
+import { Desktop, Tablet } from '../utils/responsive'
 
-const bgLinearGradient = `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45))`;
+const bgLinearGradient = `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65))`;
 
 const sharedTextCss = {
     textShadow: `0 ${rhythm(1 / 6)} ${rhythm(1 / 4)} rgba(0, 0, 0, 0.8)`,
-    fontSize: rhythm(2.8),
+    fontSize: rhythm(3),
     fontWeight: 600,
     letterSpacing: rhythm(3 / 2),
     textTransform: 'none',
-    margin: `0 ${rhythm(2)}`,
-    wordWrap: 'normal',
 }
 
 const id = 'hero';
@@ -32,24 +30,30 @@ const Hero = (props) => (
                 textAlign: 'center',
             }}>
                 {!isDesktop && <HeroWaypoint {...props}>
-                    <div css={{
+                    <Tablet>{(isTablet) => <div css={{
                         background: `${bgLinearGradient}, url(${coverPhoto}) center no-repeat fixed`,
                         height: '100vh',
                         backgroundSize: 'cover',
-                        textAlign: 'center',
                         display: 'flex',
-                        flexDirection: 'column',
+                        flexDirection: isTablet ? 'row' : 'column',
                         justifyContent: 'center',
-                        alignContent: 'center'
+                        alignItems: 'center',
+                        paddingLeft: rhythm(1),
+                        ...sharedTextCss,
                     }}>
-                        <h1 css={sharedTextCss}>TRVP<br/>HILL</h1>
-                    </div>
+                        {isTablet && <span css={{
+                            margin: `0 ${rhythm(1 / 2)}`,
+                        }}>
+                            TRVP<br/>HILL
+                        </span>}
+                        {!isTablet && 'TRVPHILL'.split('').map((letter) => <div>{letter}</div>)}
+                    </div>}</Tablet>
                 </HeroWaypoint>}
 
                 {isDesktop && <Parallax strength={350}>
                     <Background>
-                        <div css={{ width: '120vw', overflow: 'hidden' }}>
-                            <img src={coverPhoto}/>
+                        <div css={{ width: '110vw' }}>
+                            <img css={{ objectFit: 'cover' }} src={coverPhoto}/>
                         </div>
                     </Background>
                     <HeroWaypoint {...props}>
@@ -64,7 +68,10 @@ const Hero = (props) => (
                                 justifyContent: 'center',
                                 alignContent: 'center',
                             }}>
-                                <h1 css={sharedTextCss}>TRVPHILL</h1>
+                                <h1 css={{
+                                    ...sharedTextCss,
+                                    margin: `0 ${rhythm(2)}`,
+                                }}>TRVPHILL</h1>
                             </div>
                         </div>
                     </HeroWaypoint>

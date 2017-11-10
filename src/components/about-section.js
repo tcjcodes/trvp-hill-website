@@ -9,14 +9,14 @@ import { zoomOnHover } from '../utils/animation'
 import { Desktop } from '../utils/responsive'
 
 const AboutCard = (props) => (
-    <div css={{ maxWidth: 300, margin: `${rhythm(1 / 2)} ${rhythm(1)}` }}>
-        <div css={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: `0 ${rhythm(1 / 2)}` }}>
+    <div css={{ maxWidth: 300, margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}` }}>
+        <div css={{}}>
             <img css={{
                 ...zoomOnHover,
                 width: '100%',
                 objectFit: 'fill',
                 borderRadius: '50%',
-                border: `${rhythm(1 / 3)} solid ${lightColor}`
+                border: `${rhythm(1 / 4)} solid ${lightColor}`
             }}
                  src="http://via.placeholder.com/800x800" alt=""/>
         </div>
@@ -35,7 +35,7 @@ const AboutCard = (props) => (
             <div css={{
                 color: lightSecondaryColor,
                 marginBottom: rhythm(1 / 2),
-                fontSize: props.isMobile ? rhythm(9 / 10) : rhythm(6 / 10),
+                fontSize: props.isMobile ? rhythm(9 / 10) : rhythm(3 / 4),
                 letterSpacing: '2px',
             }}>{props.role}</div>
             <div css={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
@@ -71,7 +71,7 @@ const AboutSection = (props) => (
                 <SocialIcon icon='facebook' link='#'/>
                 <SocialIcon icon='instagram' link='#'/>
             </AboutCard>
-            <AboutCard isMobile={props.isMobile} nameTo='#' name='Xavier' role='Instrumentals'>
+            <AboutCard isMobile={props.isMobile} nameTo='#' name='Xavier' role='Producer'>
                 <SocialIcon icon='soundcloud' link='#'/>
                 <SocialIcon icon='facebook' link='#'/>
                 <SocialIcon icon='instagram' link='#'/>

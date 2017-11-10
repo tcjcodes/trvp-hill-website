@@ -4,15 +4,16 @@ import { Section, SectionTitle } from "./section";
 import { primaryButton } from '../utils/buttons'
 
 import jacket from './images/mockjacket.png';
-import { lightColor } from '../utils/colors'
+import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
 import { Desktop } from '../utils/responsive'
+import { secondaryFont } from '../utils/fonts'
 
 const sharedImgCss = {
     border: `${rhythm(1 / 4)} solid ${lightColor}`,
 }
 const sharedWrapperCss = {
-    margin: `0 ${rhythm(1)}`,
+    margin: `0 ${rhythm(1 / 2)}`,
 }
 const sharedButtonCss = {
     ...primaryButton,
@@ -37,10 +38,10 @@ const MerchSection = (props) => (
         {!props.isDesktop && <div>
             <SectionTitle>Merch</SectionTitle>
             <img css={sharedImgCss} src={jacket} alt="TH Bomber Jacket"/>
-            <div>
+            <div css={{ fontSize: rhythm(1), }}>
                 <p css={sharedItemTitleCss}>TH BOMBER JACKET</p>
                 <p css={sharedDescriptionCss}>Rep your city and get cozy in a TH fit.</p>
-                <button disabled='disabled' css={sharedButtonCss}>COMING SOON</button>
+                <span css={{...secondaryFont, color: lightSecondaryColor,  }}>COMING SOON</span>
             </div>
         </div>}
 

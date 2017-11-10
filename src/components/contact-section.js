@@ -3,7 +3,7 @@ import { rhythm } from '../utils/typography';
 import { Section, SectionTitle } from './section'
 import { darkSecondaryColor } from '../utils/colors'
 import { primaryButton } from '../utils/buttons'
-import { DefaultResponsive } from '../utils/responsive'
+import { DefaultResponsive, Desktop } from '../utils/responsive'
 import { TextareaInputContainer, TextInputContainer } from './contact-inputs'
 
 class ContactContainer extends React.Component {
@@ -21,11 +21,11 @@ class ContactContainer extends React.Component {
         return (
             <Section
                 styles={{
-                    width: '100vw',
+                    width: !this.props.isMobile && '100vw',
                     margin: rhythm(1)
                 }} id='contact'>
                 <SectionTitle>Contact</SectionTitle>
-                <form onSubmit={this.handleSubmit} css={{ maxWidth: this.props.isMobile ? '100vw' : '800px', }}>
+                <form onSubmit={this.handleSubmit} css={{ maxWidth: !this.props.isMobile && '900px', }}>
                     <TextInputContainer name='name' label='Name'/>
                     <TextInputContainer name='email' label='Email' type='email'/>
                     <TextInputContainer name='subject' label='Subject'/>
@@ -38,6 +38,6 @@ class ContactContainer extends React.Component {
 }
 
 const ResponsiveContact = (props) =>
-    <DefaultResponsive>{(matches) => <ContactContainer isMobile={!matches} {...props} />}</DefaultResponsive>
+    <Desktop>{(matches) => <ContactContainer isMobile={!matches} {...props} />}</Desktop>
 
 export default ResponsiveContact;

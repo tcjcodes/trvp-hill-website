@@ -23,24 +23,24 @@ const sharedInputCss = {
 }
 const TextInput = (props) => (
     <DefaultResponsive>{(isDesktop) =>
-            <div css={{
-                marginBottom: `${rhythm(1)}`,
-                width: isDesktop ? '28%' : '95%',
-                display: 'inline-block',
-                marginRight: rhythm(1)
-            }}>
-                <label css={labelCss} htmlFor={props.name}>{props.label}</label>
-                <br/>
-                <input
-                    css={{
-                        ...sharedInputCss,
-                        width: '100%',
-                    }}
-                    name={props.name}
-                    type={props.type || 'text'}
-                    value={props.value}
-                    onChange={props.onChange}/>
-            </div>
+        <div css={{
+            marginBottom: `${rhythm(1)}`,
+            width: isDesktop ? '28%' : '95%',
+            display: 'inline-block',
+            marginRight: isDesktop && rhythm(1)
+        }}>
+            <label css={labelCss} htmlFor={props.name}>{props.label}</label>
+            <br/>
+            <input
+                css={{
+                    ...sharedInputCss,
+                    width: '100%',
+                }}
+                name={props.name}
+                type={props.type || 'text'}
+                value={props.value}
+                onChange={props.onChange}/>
+        </div>
     }</DefaultResponsive>
 )
 
