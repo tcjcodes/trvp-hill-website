@@ -1,7 +1,7 @@
 import React from 'react'
 import { rhythm } from '../utils/typography';
 import { Section, SectionTitle } from './section'
-import { lightColor } from '../utils/colors'
+import { darkSecondaryColor, lightColor, lightSecondaryColor } from '../utils/colors'
 import { secondaryFont } from '../utils/fonts'
 import { primaryButton } from '../utils/buttons'
 
@@ -12,14 +12,14 @@ const labelCss = {
 const sharedInputCss = {
     letterSpacing: '1px',
     border: 0,
-    borderBottom: `1px solid ${lightColor}`,
+    borderBottom: `1px solid ${lightSecondaryColor}`,
     padding: `${rhythm(1 / 3)} 0`,
     color: lightColor,
     background: 'transparent',
     fontSize: rhythm(6 / 10),
     '&:focus': {
         outline: 'none',
-        borderBottomWidth: '2px',
+        borderBottom: `2px solid ${lightColor}`,
     },
 }
 const textInputCss = {
@@ -37,7 +37,7 @@ const textareaInputCss = {
 const TextInput = (props) => (
     <div css={{
         marginBottom: `${rhythm(1)}`,
-        width: '45%',
+        width: '28%',
         display: 'inline-block',
         marginRight: rhythm(1)
     }}>
@@ -119,18 +119,19 @@ export default class ContactContainer extends React.Component {
     render() {
         return (
             <Section id='contact'>
-                <div css={{
-                    width: '800px',
-                }}>
-                    <SectionTitle>Contact</SectionTitle>
-                    <form css={{ marginTop: rhythm(1) }}
-                          onSubmit={this.handleSubmit}>
-                        <TextInputContainer name='name' label='Name'/>
-                        <TextInputContainer name='email' label='Email' type='email'/>
-                        <TextareaInputContainer name='message' label='Message'/>
-                        <button type='submit' css={{ ...primaryButton, marginTop: rhythm(1 / 2), }}>SUBMIT</button>
-                    </form>
-                </div>
+                <SectionTitle>Contact</SectionTitle>
+                <form
+                    onSubmit={this.handleSubmit}
+                    css={{
+                        width: '800px',
+                        marginTop: rhythm(1)
+                    }}>
+                    <TextInputContainer name='name' label='Name'/>
+                    <TextInputContainer name='email' label='Email' type='email'/>
+                    <TextInputContainer name='subject' label='Subject'/>
+                    <TextareaInputContainer name='message' label='Message'/>
+                    <button type='submit' css={{ ...primaryButton, marginTop: rhythm(1 / 2), }}>SUBMIT</button>
+                </form>
             </Section>
         )
     }

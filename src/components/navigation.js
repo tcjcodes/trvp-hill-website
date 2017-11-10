@@ -17,7 +17,7 @@ const Navigation = (props) => (
     <div css={{
         margin: `0 auto`,
         height: navHeight,
-        padding: props.isMobile ? rhythm(1 / 2) : `${rhythm(1 / 2)} ${rhythm(1)}`,
+        padding: rhythm(1 / 2),
         position: 'fixed',
         width: '100%',
         background: props.activeWaypoints.indexOf('hero') >= 0 ? 'transparent' : darkColor,
