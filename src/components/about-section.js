@@ -6,13 +6,14 @@ import { secondaryFont } from "../utils/fonts";
 import SocialIcon from './social-icon'
 import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
+import { Desktop } from '../utils/responsive'
 
 const AboutCard = (props) => (
-    <div css={{ margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}`, maxWidth: '400px' }}>
+    <div css={{ maxWidth: 300, margin: `${rhythm(1 / 2)} ${rhythm(1)}` }}>
         <div css={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: `0 ${rhythm(1 / 2)}` }}>
             <img css={{
                 ...zoomOnHover,
-                width: '80%',
+                width: '100%',
                 objectFit: 'fill',
                 borderRadius: '50%',
                 border: `${rhythm(1 / 3)} solid ${lightColor}`
@@ -21,8 +22,9 @@ const AboutCard = (props) => (
         </div>
 
         <div css={{
-            textAlign: 'center',
             ...secondaryFont,
+            textAlign: 'center',
+            marginBottom: rhythm(3 / 2),
         }}>
             <div css={{
                 marginBottom: rhythm(1 / 2),
@@ -33,7 +35,7 @@ const AboutCard = (props) => (
             <div css={{
                 color: lightSecondaryColor,
                 marginBottom: rhythm(1 / 2),
-                fontSize: rhythm(6 / 10),
+                fontSize: props.isMobile ? rhythm(9 / 10) : rhythm(6 / 10),
                 letterSpacing: '2px',
             }}>{props.role}</div>
             <div css={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
@@ -48,7 +50,7 @@ AboutCard.propTypes = {
     name: PropTypes.string.isRequired,
 }
 
-const AboutSection = () => (
+const AboutSection = (props) => (
     <Section id="about">
         <SectionTitle centered>About</SectionTitle>
         <p css={{
@@ -58,23 +60,23 @@ const AboutSection = () => (
         }}>TRVPxHILL is a hip hop group based out of the Pacific Northwest.</p>
         <div css={{
             display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            flexBasis: '360px',
+            flexDirection: props.isMobile ? 'column' : 'row',
+            alignItems: 'center',
+            justifyContent: 'space-around',
             maxWidth: 1000,
         }}>
-            <AboutCard nameTo='#' name='EssToo' role='Rapper'>
+            <AboutCard isMobile={props.isMobile} nameTo='#' name='EssToo' role='Rapper'>
                 <SocialIcon icon='soundcloud' link='#'/>
                 <SocialIcon icon='bandcamp' link='#'/>
                 <SocialIcon icon='facebook' link='#'/>
                 <SocialIcon icon='instagram' link='#'/>
             </AboutCard>
-            <AboutCard nameTo='#' name='Xavier' role='Instrumentals'>
+            <AboutCard isMobile={props.isMobile} nameTo='#' name='Xavier' role='Instrumentals'>
                 <SocialIcon icon='soundcloud' link='#'/>
                 <SocialIcon icon='facebook' link='#'/>
                 <SocialIcon icon='instagram' link='#'/>
             </AboutCard>
-            <AboutCard nameTo='#' name='Sandy' role='Vocals'>
+            <AboutCard isMobile={props.isMobile} nameTo='#' name='Sandy' role='Vocals'>
                 <SocialIcon icon='youtube-play' title="youtube" link='#'/>
                 <SocialIcon icon='facebook' link='#'/>
                 <SocialIcon icon='instagram' link='#'/>
@@ -83,4 +85,7 @@ const AboutSection = () => (
     </Section>
 )
 
-export default AboutSection;
+const ResponsiveAbout = (props) =>
+    <Desktop>{(matches) => <AboutSection isMobile={!matches} {...props}/>}</Desktop>
+
+export default ResponsiveAbout;
