@@ -4,7 +4,7 @@ import Scrollchor from 'react-scrollchor'
 
 import { secondaryFont } from "../utils/fonts";
 import { darkColor } from '../utils/colors'
-import { DefaultResponsive } from '../utils/responsive'
+import { Desktop } from '../utils/responsive'
 
 export const navHeight = '50px';
 
@@ -72,6 +72,6 @@ const Navigation = (props) => (
 )
 
 const ResponsiveNavigation = (props) =>
-    <DefaultResponsive>{(matches) => <Navigation isMobile={!matches} {...props} />}</DefaultResponsive>
+    <Desktop>{(matches) => <Navigation isMobile={!matches} {...props} />}</Desktop>
 
 export default ResponsiveNavigation;
