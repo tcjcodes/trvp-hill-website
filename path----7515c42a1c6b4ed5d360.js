@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886,0x99703cc56f65],{246:function(t,a){t.exports={data:{site:{siteMetadata:{spacedTitle:"T R V P x H I L L",keywords:"tacoma, olympia, washington, seattle, capitol hill, rap, trap, hip hop, music, pacific northwest, PNW",description:"Official website of TRVPxHILL music"}}},layoutContext:{}}}});
-//# sourceMappingURL=path----7515c42a1c6b4ed5d360.js.map
