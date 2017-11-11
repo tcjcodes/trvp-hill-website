@@ -2,7 +2,7 @@ import Typography from "typography"
 import moragaTheme from "typography-theme-moraga"
 
 import '../utils/font-awesome-4.7.0/css/font-awesome.min.css';
-import { lightColor, darkColor } from './colors';
+import { lightColor, darkColor, lightSecondaryColor } from './colors';
 
 moragaTheme.baseFontSize = '20px';
 moragaTheme.bodyColor = darkColor;
@@ -30,7 +30,7 @@ moragaTheme.overrideThemeStyles = (data, options, styles) => {
             transition: 'opacity 0.1s ease-in',
         },
         'a:hover': {
-            color: 'rgb(230, 230, 230)',
+            color: lightSecondaryColor, //'rgb(230, 230, 230)',
             textDecoration: 'none',
             boxShadow: 'none',
             opacity: 1,

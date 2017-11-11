@@ -4,15 +4,17 @@ import Waypoint from 'react-waypoint'
 import { rhythm } from '../utils/typography'
 import { Background, Parallax } from 'react-parallax'
 import MediaQuery from 'react-responsive'
-import coverPhoto2400 from './images/stockhero_2400x1600.png'
-import coverPhoto1440 from './images/stockhero_1440x.png'
-import coverPhoto1200 from './images/stockhero_1200x.png'
-import coverPhoto1024 from './images/stockhero_1024x.png'
-import coverPhoto900 from './images/stockhero_900x.png'
+import coverPhoto2400 from './images/light_2400x.png'
+import coverPhoto1200 from './images/light_2400x.png'
+import coverPhoto1024 from './images/light_2400x.png'
+import coverPhoto900 from './images/light_2400x.png'
+import coverPhoto1440 from './images/light_2400x.jpg' //'./images/stockhero_1440x.png'
 import { navHeight } from './navigation'
-import { Desktop, Mobile, Tablet } from '../utils/responsive'
+import { Desktop } from '../utils/responsive'
+import { darkColor } from '../utils/colors'
 
-const bgLinearGradient = `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65))`;
+const bgLinearGradient = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2))`;
+// const bgLinearGradient = `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65))`;
 
 const sharedTextCss = {
     fontWeight: 600,
@@ -41,6 +43,7 @@ const Hero = (props) => (
         {(isDesktop) => {
             return (<section id="top" css={{
                 textAlign: 'center',
+                color: darkColor
             }}>
                 {!isDesktop && <HeroWaypoint {...props}>
                     <div css={{
@@ -102,8 +105,10 @@ const Hero = (props) => (
                                     ...sharedTextCss,
                                     letterSpacing: rhythm(2),
                                     fontSize: rhythm(7 / 2),
-                                    textShadow: `0 ${rhythm(1 / 6)} ${rhythm(1 / 4)} rgba(0, 0, 0, 0.8)`,
+                                    // textShadow: `0 ${rhythm(1 / 6)} ${rhythm(1 / 4)} rgba(0, 0, 0, 0.8)`,
                                     margin: `0 ${rhythm(2)}`,
+                                    textShadow: `0 ${rhythm(1 / 4)} ${rhythm(1 / 2)} rgba(50,50,50, 0.5)`,
+
                                 }}>
 
                                     <MediaQuery maxWidth={1199}>
