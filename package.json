@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "trvp-hill-website",
+  "description": "official website for TRVPHILL",
   "version": "1.0.0",
   "dependencies": {
     "gatsby": "1.9.73",

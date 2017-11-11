@@ -58,7 +58,7 @@ const AboutSection = (props) => (
             fontSize: rhythm(4 / 5),
             lineHeight: rhythm(1),
             padding: `0 ${rhythm(1)}`
-        }}>TRVPxHILL is a hip hop group based out of the Pacific Northwest.</p>
+        }}>TRVPHILL is a hip hop group based out of the Pacific Northwest.</p>
         <div css={{
             display: 'flex',
             flexDirection: props.isMobile ? 'column' : 'row',
