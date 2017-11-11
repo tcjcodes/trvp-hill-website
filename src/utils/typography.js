@@ -21,6 +21,7 @@ moragaTheme.overrideThemeStyles = (data, options, styles) => {
         body: {
             backgroundColor: darkColor,
             color: lightColor,
+            overflowX: 'hidden'
         },
         'a': {
             textTransform: 'uppercase',

@@ -4,7 +4,7 @@ import { rhythm } from '../utils/typography';
 import SocialIcon from './social-icon'
 
 const Footer = ({ data }) => (
-    <div css={{ textAlign: 'center', marginTop: rhythm(5) }}>
+    <div css={{ textAlign: 'center', margin: `${rhythm(5)} 0 ${rhythm(1)} 0` }}>
         <small css={{ opacity: 0.5, letterSpacing: rhythm(1 / 9) }}>
             TRVPHILL. &copy; COPYRIGHT {(new Date().getFullYear())}.
         </small>

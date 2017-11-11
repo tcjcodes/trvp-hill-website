@@ -1,44 +1,44 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { rhythm } from '../utils/typography';
 import Scrollchor from 'react-scrollchor'
-
 import { secondaryFont } from "../utils/fonts";
 import { darkColor } from '../utils/colors'
 
-export const navHeight = '50px';
+export const navHeight = '55px';
 
-const NavLink = (props) => <li css={{ display: `inline-block`, margin: `0 1rem 0 0`, fontWeight: 700 }}>
-    <Scrollchor css={{ ...props.styles }} to={props.to}>
-        {props.children}
-    </Scrollchor>
-</li>
+const NavLink = (props) =>
+    <li css={{ display: `inline-block`, margin: `0 1rem 0 0`, fontWeight: 700 }}>
+        <Scrollchor to={props.to}>{props.children}</Scrollchor>
+    </li>
 
 const Navigation = (props) => (
     <div css={{
         margin: `0 auto`,
         height: navHeight,
-        padding: `${rhythm(1 / 2)} ${rhythm(1)}`,
+        padding: rhythm(1 / 2),
         position: 'fixed',
         width: '100%',
         background: props.activeWaypoints.indexOf('hero') >= 0 ? 'transparent' : darkColor,
-        zIndex: 100
+        zIndex: 100,
     }}>
         <header>
-            <ul css={{
+            {<ul css={{
                 listStyle: `none`,
                 float: `left`,
                 margin: 0,
             }}>
                 {props.activeWaypoints.indexOf('hero') < 0 &&
-                <NavLink styles={{ fontWeight: 600, letterSpacing: rhythm(1 / 4) }} to="top">
+                <NavLink to="top">
                     <span css={{
+                        fontWeight: 600,
+                        letterSpacing: rhythm(1 / 4),
                         display: `inline`,
-                        fontWeight: 'bold',
-                        fontSize: rhythm(3 / 4),
                         textTransform: 'none',
                     }}>TRVPHILL</span>
                 </NavLink>}
-            </ul>
+            </ul>}
+
             <ul css={{ listStyle: `none`, float: `right`, margin: 0, ...secondaryFont, letterSpacing: rhythm(1 / 10) }}>
                 <NavLink to="music">music</NavLink>
                 <NavLink to="merch">merch</NavLink>
@@ -48,5 +48,9 @@ const Navigation = (props) => (
         </header>
     </div>
 )
+
+Navigation.propTypes = {
+    activeWaypoints: PropTypes.array,
+}
 
 export default Navigation;

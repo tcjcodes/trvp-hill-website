@@ -4,31 +4,40 @@ import { rhythm } from '../utils/typography';
 import { Section, SectionTitle } from "./section";
 import { secondaryFont } from "../utils/fonts";
 import SocialIcon from './social-icon'
-import { lightColor } from '../utils/colors'
+import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
+import { Desktop } from '../utils/responsive'
 
 const AboutCard = (props) => (
-    <div css={{ margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}` }}>
-        <div css={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div css={{ }}>
-                <img css={{
-                    ...zoomOnHover,
-                    objectFit: 'fill',
-                    borderRadius: '50%',
-                    border: `${rhythm(1 / 3)} solid ${lightColor}`
-                }}
-                     src="http://via.placeholder.com/800x800" alt=""/>
-            </div>
+    <div css={{ maxWidth: 300, margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}` }}>
+        <div css={{}}>
+            <img css={{
+                ...zoomOnHover,
+                width: '100%',
+                objectFit: 'fill',
+                borderRadius: '50%',
+                border: `${rhythm(1 / 4)} solid ${lightColor}`
+            }}
+                 src="http://via.placeholder.com/800x800" alt=""/>
         </div>
 
-        <div css={{ textAlign: 'center' }}>
-            <div css={{ marginBottom: rhythm(1 / 2), fontSize: rhythm(7 / 10) }}>
-                <span css={{ ...secondaryFont, letterSpacing: rhythm(2 / 10) }} href={props.nameTo}>{props.name}</span>
-            </div>
-            <p css={{ fontSize: rhythm(2 / 3) }}>
-                Purr for no reason rub face on everything, and sit on human or spill litter box, scratch at owner,
-                destroy all furniture, especially couch.
-            </p>
+        <div css={{
+            ...secondaryFont,
+            textAlign: 'center',
+            marginBottom: rhythm(3 / 2),
+        }}>
+            <div css={{
+                marginBottom: rhythm(1 / 2),
+                fontSize: rhythm(1),
+                letterSpacing: rhythm(1 / 5),
+            }}>{props.name}</div>
+
+            <div css={{
+                color: lightSecondaryColor,
+                marginBottom: rhythm(1 / 2),
+                fontSize: props.isMobile ? rhythm(9 / 10) : rhythm(3 / 4),
+                letterSpacing: '2px',
+            }}>{props.role}</div>
             <div css={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                 {props.children}
             </div>
@@ -41,32 +50,34 @@ AboutCard.propTypes = {
     name: PropTypes.string.isRequired,
 }
 
-const AboutSection = () => (
+const AboutSection = (props) => (
     <Section id="about">
         <SectionTitle centered>About</SectionTitle>
         <p css={{
             textAlign: 'center',
             fontSize: rhythm(4 / 5),
-            lineHeight: rhythm(1)
+            lineHeight: rhythm(1),
+            padding: `0 ${rhythm(1)}`
         }}>TRVPxHILL is a hip hop group based out of the Pacific Northwest.</p>
         <div css={{
             display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            flexBasis: '360px'
+            flexDirection: props.isMobile ? 'column' : 'row',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            maxWidth: 1000,
         }}>
-            <AboutCard nameTo='#' name='EssToo'>
+            <AboutCard isMobile={props.isMobile} nameTo='#' name='EssToo' role='Rapper'>
                 <SocialIcon icon='soundcloud' link='#'/>
                 <SocialIcon icon='bandcamp' link='#'/>
                 <SocialIcon icon='facebook' link='#'/>
                 <SocialIcon icon='instagram' link='#'/>
             </AboutCard>
-            <AboutCard nameTo='#' name='Xavier'>
+            <AboutCard isMobile={props.isMobile} nameTo='#' name='Xavier' role='Producer'>
                 <SocialIcon icon='soundcloud' link='#'/>
                 <SocialIcon icon='facebook' link='#'/>
                 <SocialIcon icon='instagram' link='#'/>
             </AboutCard>
-            <AboutCard nameTo='#' name='Sandy'>
+            <AboutCard isMobile={props.isMobile} nameTo='#' name='Sandy' role='Vocals'>
                 <SocialIcon icon='youtube-play' title="youtube" link='#'/>
                 <SocialIcon icon='facebook' link='#'/>
                 <SocialIcon icon='instagram' link='#'/>
@@ -75,4 +86,7 @@ const AboutSection = () => (
     </Section>
 )
 
-export default AboutSection;
+const ResponsiveAbout = (props) =>
+    <Desktop>{(matches) => <AboutSection isMobile={!matches} {...props}/>}</Desktop>
+
+export default ResponsiveAbout;

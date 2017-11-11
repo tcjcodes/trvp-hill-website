@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Waypoint from 'react-waypoint'
 import { rhythm } from '../utils/typography'
 import { secondaryFont } from "../utils/fonts"
@@ -18,7 +17,8 @@ export const Section = (props) => (
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            letterSpacing: '1px'
+            letterSpacing: '1px',
+            ...props.styles
         }}>
         <Waypoint>
             <div>
