@@ -13,7 +13,7 @@ class ContactContainer extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('form submitted')
+        !this.props.isMobile && alert('form submitted')
         event.preventDefault();
     }
 
