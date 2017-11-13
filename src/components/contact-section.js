@@ -6,15 +6,28 @@ import { primaryButton } from '../utils/buttons'
 import { Desktop } from '../utils/responsive'
 import { TextareaInputContainer, TextInputContainer } from './contact-inputs'
 
+const encode = (data) =>
+    (Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&"))
+
 class ContactContainer extends React.Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(event) {
+    handleSubmit(e) {
         !this.props.isMobile && alert('form submitted')
-        event.preventDefault();
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...this.state })
+        })
+            .then(() => alert("Success!"))
+            .catch(error => alert(error));
+
+        e.preventDefault();
     }
 
     render() {
@@ -25,7 +38,13 @@ class ContactContainer extends React.Component {
                     margin: rhythm(1)
                 }} id='contact'>
                 <SectionTitle>Contact</SectionTitle>
-                <form onSubmit={this.handleSubmit} css={{ maxWidth: !this.props.isMobile && '900px', }}>
+                <form name='contact'
+                      method='post'
+                      action='/thanks/'
+                      data-netlify='true'
+                      data-netlify-honeypot='bot-field'
+                      onSubmit={this.handleSubmit}
+                      css={{ maxWidth: !this.props.isMobile && '900px', }}>
                     <TextInputContainer name='name' label='Name'/>
                     <TextInputContainer name='email' label='Email' type='email'/>
                     <TextInputContainer name='subject' label='Subject'/>
