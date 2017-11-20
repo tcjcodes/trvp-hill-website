@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { rhythm } from '../utils/typography';
 import Navigation from '../components/navigation'
-import ContactContainer from '../components/contact-section'
+import ResponsiveContact from '../components/contact-section'
 import Hero from '../components/hero';
 import MusicSection from "../components/music-section";
 import MerchSection from '../components/merch-section';
@@ -47,7 +47,7 @@ const IndexPage = (props) => (
             <MusicSection/>
             <MerchSection/>
             <AboutSection/>
-            <ContactContainer/>
+            <ResponsiveContact/>
             <Footer/>
         </div>
     </div>

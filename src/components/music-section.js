@@ -1,10 +1,9 @@
 import React from 'react'
 import { rhythm } from '../utils/typography';
-import FontAwesome from 'react-fontawesome';
+// import '../lib/soundcloud-widget-20170920';
 import { Section, SectionTitle } from "./section";
 import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { Desktop } from '../utils/responsive'
-import { secondaryFont } from '../utils/fonts'
 
 const sharedButtonCss = {
     cursor: 'pointer',
@@ -25,11 +24,21 @@ const handleClick = (e) => {
     alert('Coming soon');
 }
 
-const albumArt = "http://via.placeholder.com/400x400";
+// const albumArt = "http://via.placeholder.com/400x400";
+
 const MusicSection = (props) => (
     <Section id="music">
         <SectionTitle centered>MUSIC</SectionTitle>
-        {props.isMobile && <div css={{
+        <div css={{
+            marginTop: rhythm(1),
+            width: props.isMobile ? '90vw' : '750px',
+            textAlign: 'center'
+        }}>
+            COMING SOON
+            {/*<iframe css={{ border: 0 }} id="scwidget" width="100%" height="166" scrolling="no" data-frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/341242026&amp;color=%23000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;show_playcount=false&amp;show_artwork=false"></iframe>*/}
+        </div>
+
+        {/*{props.isMobile && <div css={{
             textAlign: 'center',
             marginTop: rhythm(1),
             padding: `0 ${rhythm(1)}`,
@@ -50,8 +59,8 @@ const MusicSection = (props) => (
                     }}>
                 <FontAwesome name="play-circle"/>{' '}GIRLS GOIN (HAILEY)
             </button>
-        </div>}
-        {!props.isMobile && <div css={{
+        </div>}*/}
+        {/*{!props.isMobile && <div css={{
             width: '750px',
             margin: `${rhythm(1 / 4)} auto`,
             border: `1px solid #ddd`,
@@ -79,11 +88,30 @@ const MusicSection = (props) => (
                     </button>
                 </div>
             </div>
-        </div>}
+        </div>}*/}
     </Section>
 );
 
 const ResponsiveMusic = (props) =>
     <Desktop>{(matches) => <MusicSection isMobile={!matches} {...props} />}</Desktop>
 
-export default ResponsiveMusic;
+class MusicPlayer extends React.Component {
+    scPlayer;
+
+    constructor(props) {
+        super(props);
+    }
+
+    handlePlay(track) {
+    }
+
+    componentDidMount() {
+        // this.scPlayer = SC.Widget('scwidget');//new SoundCloudAudio('YOUR_CLIENT_ID');
+    }
+
+    render() {
+        return <Desktop>{(matches) => <MusicSection isMobile={!matches} {...this.props} />}</Desktop>;
+    }
+}
+
+export default MusicPlayer;

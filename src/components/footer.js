@@ -9,7 +9,7 @@ const Footer = () => (
             TRVPHILL. &copy; COPYRIGHT {(new Date().getFullYear())}.
         </small>
         <div css={{ marginTop: rhythm(1 / 2) }}>
-            <SocialIcon icon='soundcloud' link='https://soundcloud.com/trvphill' />
+            {/*<SocialIcon icon='soundcloud' link='https://soundcloud.com/trvphill' />*/}
             <SocialIcon icon='facebook' link='https://www.facebook.com/TRVPHILL/' />
             <SocialIcon icon='instagram' link='https://www.instagram.com/trvphill/' />
             {/*<SocialIcon title='e-mail' icon='envelope-o' link='#'/>*/}

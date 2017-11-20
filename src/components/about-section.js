@@ -8,7 +8,8 @@ import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
 import { Desktop } from '../utils/responsive'
 import imgXavier from './images/aboutx.jpg'
-import imgXavier2 from './images/aboutx2.png'
+import imgSandy from './images/abouts.png'
+import imgEsstoo from './images/aboute.jpg'
 
 const AboutCard = (props) => (
     <div css={{ maxWidth: 300, margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}` }}>
@@ -70,18 +71,18 @@ const AboutSection = (props) => (
             justifyContent: 'space-around',
             maxWidth: 1000,
         }}>
-            <AboutCard isMobile={props.isMobile} image='http://via.placeholder.com/800x800' name='EssToo' role='Rapper'>
+            <AboutCard isMobile={props.isMobile} image={imgEsstoo} name='EssToo' role='Rapper'>
                 <SocialIcon icon='soundcloud' link='https://soundcloud.com/esstoo'/>
                 <SocialIcon icon='bandcamp' link='https://esstoo.bandcamp.com/releases'/>
-                <SocialIcon icon='instagram' link='#'/>
+                <SocialIcon icon='instagram' link='https://www.instagram.com/briskisit/'/>
+            </AboutCard>
+            <AboutCard isMobile={props.isMobile} image={imgSandy} name='Sandy' role='Vocals'>
+                {/*<SocialIcon icon='youtube-play' title="youtube" link='#'/>*/}
+                {/*<SocialIcon icon='facebook' link='#'/>*/}
+                <SocialIcon icon='instagram' link='https://www.instagram.com/sbeaches5/'/>
             </AboutCard>
             <AboutCard isMobile={props.isMobile} image={imgXavier} name='Xavier' role='Producer'>
                 <SocialIcon icon='instagram' link='https://www.instagram.com/dhayzoos/' />
-            </AboutCard>
-            <AboutCard isMobile={props.isMobile} image={imgXavier2} name='Sandy' role='Vocals'>
-                <SocialIcon icon='youtube-play' title="youtube" link='#'/>
-                {/*<SocialIcon icon='facebook' link='#'/>*/}
-                <SocialIcon icon='instagram' link='#'/>
             </AboutCard>
         </div>
     </Section>

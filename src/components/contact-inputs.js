@@ -41,12 +41,14 @@ export const TextInput = (props) => (
                 name={props.name}
                 type={props.type || 'text'}
                 value={props.value}
+                required={props.required}
                 onChange={props.onChange}/>
         </div>
     }</DefaultResponsive>
 )
 
 TextInput.propTypes = {
+    required: PropTypes.bool,
     type: PropTypes.string,
     value: PropTypes.string,
     label: PropTypes.string,
@@ -68,11 +70,13 @@ export const TextareaInput = (props) => (
             }}
             name={props.name}
             value={props.value}
+            required={props.required}
             onChange={props.onChange}/>
     </div>
 )
 
 TextareaInput.propTypes = {
+    required: PropTypes.bool,
     value: PropTypes.string,
     label: PropTypes.string,
     name: PropTypes.string.isRequired,

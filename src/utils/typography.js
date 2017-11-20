@@ -1,8 +1,7 @@
 import Typography from "typography"
 import moragaTheme from "typography-theme-moraga"
-
-import '../utils/font-awesome-4.7.0/css/font-awesome.min.css';
-import { lightColor, darkColor } from './colors';
+import 'font-awesome/css/font-awesome.min.css'
+import { lightColor, darkColor } from './colors'
 
 moragaTheme.baseFontSize = '20px';
 moragaTheme.bodyColor = darkColor;
