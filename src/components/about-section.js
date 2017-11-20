@@ -7,9 +7,9 @@ import SocialIcon from './social-icon'
 import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
 import { Desktop } from '../utils/responsive'
-import imgXavier from './images/aboutx.jpg'
-import imgSandy from './images/abouts.png'
-import imgEsstoo from './images/aboute.jpg'
+import imgXavier from './images/aboutxbw.jpg'
+import imgSandy from './images/aboutsbw.jpg'
+import imgEsstoo from './images/aboutebw.jpg'
 
 const AboutCard = (props) => (
     <div css={{ maxWidth: 300, margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}` }}>
