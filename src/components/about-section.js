@@ -77,7 +77,7 @@ const AboutSection = (props) => (
         <div css={{
             display: 'flex',
             flexDirection: props.isMobile ? 'column' : 'row',
-            alignItems: 'top',
+            alignItems: 'center',
             justifyContent: 'space-around',
             maxWidth: 1000,
         }}>

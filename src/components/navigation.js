@@ -23,12 +23,13 @@ const Navigation = (props) => (
         zIndex: 100,
     }}>
         <header>
-            {<ul css={{
+            <ul css={{
+                opacity: props.activeWaypoints.indexOf('hero') >= 0 ? 0 : '1.0',
+                transition: 'opacity 0.3s ease',
                 listStyle: `none`,
                 float: `left`,
                 margin: 0,
             }}>
-                {props.activeWaypoints.indexOf('hero') < 0 &&
                 <NavLink to="top">
                     <span css={{
                         fontWeight: 600,
@@ -36,8 +37,8 @@ const Navigation = (props) => (
                         display: `inline`,
                         textTransform: 'none',
                     }}>TRVPHILL</span>
-                </NavLink>}
-            </ul>}
+                </NavLink>
+            </ul>
 
             <ul css={{ listStyle: `none`, float: `right`, margin: 0, ...secondaryFont, letterSpacing: rhythm(1 / 10) }}>
                 <NavLink to="music">music</NavLink>
