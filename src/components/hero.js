@@ -9,8 +9,9 @@ import coverPhoto1440 from './images/stockhero_1440x.png'
 import coverPhoto1200 from './images/stockhero_1200x.png'
 import coverPhoto1024 from './images/stockhero_1024x.png'
 import coverPhoto900 from './images/stockhero_900x.png'
+import coverPhotoMobile from './images/stockhero_768mobile.png'
 import { navHeight } from './navigation'
-import { Desktop, Mobile, Tablet } from '../utils/responsive'
+import { Desktop } from '../utils/responsive'
 
 const bgLinearGradient = `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65))`;
 
@@ -44,9 +45,17 @@ const Hero = (props) => (
             }}>
                 {!isDesktop && <HeroWaypoint {...props}>
                     <div css={{
-                        background: `${bgLinearGradient}, url(${coverPhoto900}) center repeat fixed`,
+                        background: `${bgLinearGradient}, url(${coverPhotoMobile}) center center repeat fixed`,
                         height: '100vh',
-                        backgroundSize: 'cover',
+                        top: 0,
+                        left: 0,
+                        /* Preserve aspect ratio */
+                        minWidth: '100%',
+                        minHeight: '100%',
+                        '@media screen and (max-width: 768px)': {
+                            backgroundPositionX: '50%',
+                            backgroundPositionY: '0',
+                        }
                     }}>
                         <div css={{
                             display: 'flex',

@@ -32,7 +32,8 @@ const MusicSection = (props) => (
         <div css={{
             marginTop: rhythm(1),
             width: props.isMobile ? '90vw' : '750px',
-            textAlign: 'center'
+            textAlign: 'center',
+            fontSize: rhythm(1),
         }}>
             COMING SOON
             {/*<iframe css={{ border: 0 }} id="scwidget" width="100%" height="166" scrolling="no" data-frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/341242026&amp;color=%23000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;show_playcount=false&amp;show_artwork=false"></iframe>*/}

@@ -22,7 +22,7 @@ const AboutCard = (props) => (
                 border: `${rhythm(1 / 4)} solid ${lightColor}`
             }}
                  src={props.image}
-                 alt={props.name} />
+                 alt={props.name}/>
         </div>
 
         <div css={{
@@ -31,9 +31,13 @@ const AboutCard = (props) => (
             marginBottom: rhythm(3 / 2),
         }}>
             <div css={{
+                ...props.styles,
                 marginBottom: rhythm(1 / 2),
-                fontSize: rhythm(1),
                 letterSpacing: rhythm(1 / 5),
+                minHeight: rhythm(4 / 2),
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
             }}>{props.name}</div>
 
             <div css={{
@@ -43,7 +47,13 @@ const AboutCard = (props) => (
                 letterSpacing: '2px',
             }}>{props.role}</div>
 
-            <div css={{ width: '100%', marginTop: rhythm(2 / 5), display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+            <div css={{
+                width: '100%',
+                marginTop: rhythm(2 / 5),
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center'
+            }}>
                 {props.children}
             </div>
         </div>
@@ -67,22 +77,26 @@ const AboutSection = (props) => (
         <div css={{
             display: 'flex',
             flexDirection: props.isMobile ? 'column' : 'row',
-            alignItems: 'center',
+            alignItems: 'top',
             justifyContent: 'space-around',
             maxWidth: 1000,
         }}>
-            <AboutCard isMobile={props.isMobile} image={imgEsstoo} name='EssToo' role='Rapper'>
+            <AboutCard styles={{
+                fontSize: rhythm(1),
+            }} isMobile={props.isMobile} image={imgEsstoo} name='EssToo' role='Rapper'>
                 <SocialIcon icon='soundcloud' link='https://soundcloud.com/esstoo'/>
                 <SocialIcon icon='bandcamp' link='https://esstoo.bandcamp.com/releases'/>
                 <SocialIcon icon='instagram' link='https://www.instagram.com/briskisit/'/>
             </AboutCard>
-            <AboutCard isMobile={props.isMobile} image={imgSandy} name='Sandy' role='Vocals'>
-                {/*<SocialIcon icon='youtube-play' title="youtube" link='#'/>*/}
-                {/*<SocialIcon icon='facebook' link='#'/>*/}
+            <AboutCard styles={{
+                fontSize: rhythm(9 / 10),
+            }} isMobile={props.isMobile} image={imgSandy} name='Sandy Beaches' role='Vocals'>
                 <SocialIcon icon='instagram' link='https://www.instagram.com/sbeaches5/'/>
             </AboutCard>
-            <AboutCard isMobile={props.isMobile} image={imgXavier} name='Xavier' role='Producer'>
-                <SocialIcon icon='instagram' link='https://www.instagram.com/dhayzoos/' />
+            <AboutCard styles={{
+                fontSize: rhythm(1),
+            }} isMobile={props.isMobile} image={imgXavier} name='Xavier' role='Producer'>
+                <SocialIcon icon='instagram' link='https://www.instagram.com/dhayzoos/'/>
             </AboutCard>
         </div>
     </Section>
