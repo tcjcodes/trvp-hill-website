@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { rhythm } from '../utils/typography';
 import { darkSecondaryColor, lightColor, lightSecondaryColor } from '../utils/colors'
 import { secondaryFont } from '../utils/fonts'
@@ -21,7 +22,8 @@ const sharedInputCss = {
         borderBottom: `2px solid ${lightColor}`,
     },
 }
-const TextInput = (props) => (
+
+export const TextInput = (props) => (
     <DefaultResponsive>{(isDesktop) =>
         <div css={{
             marginBottom: `${rhythm(1)}`,
@@ -44,28 +46,16 @@ const TextInput = (props) => (
     }</DefaultResponsive>
 )
 
-export class TextInputContainer extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { value: '' };
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        this.setState({ value: event.target.value });
-    }
-
-    render() {
-        return (<TextInput
-            label={this.props.label}
-            name={this.props.name}
-            onChange={this.handleChange}
-            value={this.state.value}/>)
-    }
+TextInput.propTypes = {
+    type: PropTypes.string,
+    value: PropTypes.string,
+    label: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
-const TextareaInput = (props) => (
-    <div css={{}}>
+export const TextareaInput = (props) => (
+    <div>
         <label css={labelCss} htmlFor={props.name}>{props.label}</label>
         <br/>
         <textarea
@@ -82,22 +72,9 @@ const TextareaInput = (props) => (
     </div>
 )
 
-export class TextareaInputContainer extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { value: '' };
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        this.setState({ value: event.target.value });
-    }
-
-    render() {
-        return (<TextareaInput
-            label={this.props.label}
-            name={this.props.name}
-            onChange={this.handleChange}
-            value={this.state.value}/>)
-    }
+TextareaInput.propTypes = {
+    value: PropTypes.string,
+    label: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
 }

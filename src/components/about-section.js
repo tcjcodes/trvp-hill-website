@@ -7,10 +7,12 @@ import SocialIcon from './social-icon'
 import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { zoomOnHover } from '../utils/animation'
 import { Desktop } from '../utils/responsive'
+import imgXavier from './images/aboutx.jpg'
+import imgXavier2 from './images/aboutx2.png'
 
 const AboutCard = (props) => (
     <div css={{ maxWidth: 300, margin: `${rhythm(1 / 2)} ${rhythm(3 / 2)}` }}>
-        <div css={{}}>
+        <div>
             <img css={{
                 ...zoomOnHover,
                 width: '100%',
@@ -18,7 +20,8 @@ const AboutCard = (props) => (
                 borderRadius: '50%',
                 border: `${rhythm(1 / 4)} solid ${lightColor}`
             }}
-                 src="http://via.placeholder.com/800x800" alt=""/>
+                 src={props.image}
+                 alt={props.name} />
         </div>
 
         <div css={{
@@ -38,7 +41,8 @@ const AboutCard = (props) => (
                 fontSize: props.isMobile ? rhythm(9 / 10) : rhythm(3 / 4),
                 letterSpacing: '2px',
             }}>{props.role}</div>
-            <div css={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+
+            <div css={{ width: '100%', marginTop: rhythm(2 / 5), display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                 {props.children}
             </div>
         </div>
@@ -46,7 +50,7 @@ const AboutCard = (props) => (
 )
 
 AboutCard.propTypes = {
-    nameTo: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
 }
 
@@ -66,20 +70,17 @@ const AboutSection = (props) => (
             justifyContent: 'space-around',
             maxWidth: 1000,
         }}>
-            <AboutCard isMobile={props.isMobile} nameTo='#' name='EssToo' role='Rapper'>
-                <SocialIcon icon='soundcloud' link='#'/>
-                <SocialIcon icon='bandcamp' link='#'/>
-                <SocialIcon icon='facebook' link='#'/>
+            <AboutCard isMobile={props.isMobile} image='http://via.placeholder.com/800x800' name='EssToo' role='Rapper'>
+                <SocialIcon icon='soundcloud' link='https://soundcloud.com/esstoo'/>
+                <SocialIcon icon='bandcamp' link='https://esstoo.bandcamp.com/releases'/>
                 <SocialIcon icon='instagram' link='#'/>
             </AboutCard>
-            <AboutCard isMobile={props.isMobile} nameTo='#' name='Xavier' role='Producer'>
-                <SocialIcon icon='soundcloud' link='#'/>
-                <SocialIcon icon='facebook' link='#'/>
-                <SocialIcon icon='instagram' link='#'/>
+            <AboutCard isMobile={props.isMobile} image={imgXavier} name='Xavier' role='Producer'>
+                <SocialIcon icon='instagram' link='https://www.instagram.com/dhayzoos/' />
             </AboutCard>
-            <AboutCard isMobile={props.isMobile} nameTo='#' name='Sandy' role='Vocals'>
+            <AboutCard isMobile={props.isMobile} image={imgXavier2} name='Sandy' role='Vocals'>
                 <SocialIcon icon='youtube-play' title="youtube" link='#'/>
-                <SocialIcon icon='facebook' link='#'/>
+                {/*<SocialIcon icon='facebook' link='#'/>*/}
                 <SocialIcon icon='instagram' link='#'/>
             </AboutCard>
         </div>

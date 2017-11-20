@@ -1,5 +1,5 @@
 module.exports = {
-    pathPrefix: '/trvp-hill-website',
+    pathPrefix: '/',
     siteMetadata: {
         spacedTitle: 'T R V P H I L L',
         title: `TRVPHILL`,
@@ -16,5 +16,6 @@ module.exports = {
         },
         'gatsby-plugin-glamor',
         `gatsby-plugin-catch-links`,
+        `gatsby-plugin-netlify`, // make sure to put last in the array
     ],
 }

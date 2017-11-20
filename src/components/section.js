@@ -3,9 +3,6 @@ import Waypoint from 'react-waypoint'
 import { rhythm } from '../utils/typography'
 import { secondaryFont } from "../utils/fonts"
 
-const handleWaypointEnter = (id) => console.log(`${id} entered`)
-const handleWaypointLeave = (id) => console.log(`${id} left`)
-
 export const Section = (props) => (
     <section
         id={props.id}

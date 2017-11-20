@@ -1,12 +1,28 @@
 import React from 'react'
 import { rhythm } from '../utils/typography';
+import FontAwesome from 'react-fontawesome';
 import { Section, SectionTitle } from "./section";
 import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { Desktop } from '../utils/responsive'
 import { secondaryFont } from '../utils/fonts'
 
+const sharedButtonCss = {
+    cursor: 'pointer',
+    color: lightSecondaryColor,
+    background: 'transparent',
+    border: 0,
+    outline: 0,
+    transitionDuration: '0.2s',
+    transitionProperty: 'transform',
+    transform: 'perspective(1px) translateZ(0)',
+    '&:hover': {
+        transform: 'scale(1.2)',
+        color: lightColor
+    },
+}
 const handleClick = (e) => {
     e.preventDefault();
+    alert('Coming soon');
 }
 
 const albumArt = "http://via.placeholder.com/400x400";
@@ -27,22 +43,12 @@ const MusicSection = (props) => (
             <button onClick={handleClick}
                     title='Play song'
                     css={{
+                        ...sharedButtonCss,
                         ...secondaryFont,
                         letterSpacing: '2px',
                         fontSize: rhythm(1),
-                        cursor: 'pointer',
-                        color: lightSecondaryColor,
-                        background: 'transparent',
-                        transitionDuration: '0.2s',
-                        transitionProperty: 'transform',
-                        transform: 'perspective(1px) translateZ(0)',
-                        '&:hover': {
-                            transform: 'scale(1.2)',
-                            color: lightColor
-                        },
-                        border: 0,
                     }}>
-                <span className="fa fa-play-circle"/>{' '}GIRLS GOIN (HAILEY)
+                <FontAwesome name="play-circle"/>{' '}GIRLS GOIN (HAILEY)
             </button>
         </div>}
         {!props.isMobile && <div css={{
@@ -63,17 +69,13 @@ const MusicSection = (props) => (
                     <button onClick={handleClick}
                             title='Play song'
                             css={{
-                                cursor: 'pointer',
+                                ...sharedButtonCss,
                                 marginTop: rhythm(1 / 8),
-                                color: lightColor, background: 'transparent',
-                                transitionDuration: '0.2s',
-                                transitionProperty: 'transform',
-                                transform: 'perspective(1px) translateZ(0)',
-                                '&:hover': {
-                                    transform: 'scale(1.2)'
-                                }, border: 0, fontSize: rhythm(3 / 2), float: 'right', textAlign: 'right'
+                                fontSize: rhythm(3 / 2),
+                                float: 'right',
+                                textAlign: 'right',
                             }}>
-                        <span className="fa fa-play-circle"/>
+                        <FontAwesome name="play-circle"/>
                     </button>
                 </div>
             </div>
