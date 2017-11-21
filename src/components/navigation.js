@@ -19,6 +19,7 @@ const Navigation = (props) => (
         padding: rhythm(1 / 2),
         position: 'fixed',
         width: '100%',
+        transition: 'background 0.3s ease',
         background: props.activeWaypoints.indexOf('hero') >= 0 ? 'transparent' : darkColor,
         zIndex: 100,
     }}>
