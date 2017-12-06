@@ -21,6 +21,9 @@ const sharedInputCss = {
         outline: 'none',
         borderBottom: `2px solid ${lightColor}`,
     },
+    '&:invalid': {
+        boxShadow: 'none',
+    },
 }
 
 export const TextInput = (props) => (
