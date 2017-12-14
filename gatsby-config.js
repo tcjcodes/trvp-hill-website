@@ -3,8 +3,8 @@ module.exports = {
     siteMetadata: {
         spacedTitle: 'T R V P H I L L',
         title: `TRVPHILL`,
-        description: 'Official website of TRVPHILL music',
-        keywords: 'tacoma, olympia, washington, seattle, capitol hill, rap, trap, hip hop, music, pacific northwest, PNW'
+        description: 'Official website of Trap Hill music',
+        keywords: 'tacoma, olympia, washington, seattle, capitol hill, trvphill, rap, trap, hip hop, music, pacific northwest, PNW'
     },
     plugins: [
         `gatsby-plugin-react-helmet`,

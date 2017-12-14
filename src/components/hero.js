@@ -66,7 +66,7 @@ const Hero = (props) => (
                             height: '85%',
                             flexWrap: 'wrap',
                         }}>
-                            {'THRIVLPL'.split('').map((letter) => <div css={{
+                            {'THRIVLPL'.split('').map((letter, index) => <div key={index} css={{
                                 ...sharedTextCss,
                                 ...mobileTextCss,
                                 width: '50%',

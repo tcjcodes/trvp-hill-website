@@ -4,6 +4,9 @@ import { rhythm } from '../utils/typography';
 import { Section, SectionTitle } from "./section";
 import { lightColor, lightSecondaryColor } from '../utils/colors'
 import { Desktop } from '../utils/responsive'
+import { SocialImageIcon } from './social-icon'
+import tidalIcon from './images/icon-tidal.png'
+import amazonIcon from './images/icon-amazonmusic.png'
 
 const sharedButtonCss = {
     cursor: 'pointer',
@@ -24,21 +27,65 @@ const handleClick = (e) => {
     alert('Coming soon');
 }
 
-// const albumArt = "http://via.placeholder.com/400x400";
+export const MusicIcon = (props) => (
+    <div css={{
+        margin: rhythm(1),
+        fontSize: rhythm(1.75),
+        width: props.isMobile ? '100%' : '120px',
+    }}>
+        <a href={props.link} title={props.title || props.icon} target='_blank'>
+            <span className={`fa fa-${props.icon} fa-lg`}/>
+        </a>
+    </div>
+)
+
+export const MusicImageIcon = (props) => (
+    <a css={{
+        display: 'block',
+        width: props.isMobile ? '100%' : '120px',
+    }} href={props.link} title={props.title} target='_blank'>
+        <img css={{
+            margin: rhythm(1),
+            height: rhythm(2),
+            width: 'auto',
+        }} src={props.src} alt={props.alt || props.title}/>
+    </a>
+)
 
 const MusicSection = (props) => (
     <Section id="music">
         <SectionTitle centered>MUSIC</SectionTitle>
+
         <div css={{
-            marginTop: rhythm(1),
+            marginTop: rhythm(2),
+            width: props.isMobile ? '90vw' : '750px',
+            display: 'flex',
+            justifyContent: 'space-around',
+            alignContent: 'center',
+            textAlign: 'center',
+            flexWrap: 'wrap',
+        }}>
+            <MusicImageIcon isMobile={props.isMobile} src={amazonIcon} title='Amazon Music'
+                            link='https://smile.amazon.com/dp/B0788DKN22/ref=cm_sw_r_cp_api_zHUmAb58C3KWT'/>
+            <MusicIcon isMobile={props.isMobile} icon="apple" title='apple music'
+                       link='https://itunes.apple.com/us/album/girls-goin-hailey-single/1325462470'/>
+            {/*<SocialIcon icon="soundcloud" link='#' styles={iconStyles}/>
+            <SocialIcon icon="spotify" link='#' styles={iconStyles}/>*/}
+            <MusicImageIcon isMobile={props.isMobile} src={tidalIcon} title='Tidal'
+                            link='https://tidal.com/track/82469467'/>
+
+            {/*<iframe css={{ border: 0 }} id="scwidget" width="100%" height="166" scrolling="no" data-frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/341242026&amp;color=%23000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;show_playcount=false&amp;show_artwork=false"></iframe>*/}
+        </div>
+
+        {/* <div css={{
+            marginTop: rhythm(2),
             width: props.isMobile ? '90vw' : '750px',
             textAlign: 'center',
             fontSize: rhythm(1),
         }}>
-            COMING SOON
-            {/*<iframe css={{ border: 0 }} id="scwidget" width="100%" height="166" scrolling="no" data-frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/341242026&amp;color=%23000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;show_playcount=false&amp;show_artwork=false"></iframe>*/}
+            <iframe css={{ border: 0 }} id="scwidget" width="100%" height="166" scrolling="no" data-frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/341242026&amp;color=%23000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;show_playcount=false&amp;show_artwork=false"></iframe>
         </div>
-
+*/}
         {/*{props.isMobile && <div css={{
             textAlign: 'center',
             marginTop: rhythm(1),
@@ -92,6 +139,8 @@ const MusicSection = (props) => (
         </div>}*/}
     </Section>
 );
+
+// const albumArt = "http://via.placeholder.com/400x400";
 
 const ResponsiveMusic = (props) =>
     <Desktop>{(matches) => <MusicSection isMobile={!matches} {...props} />}</Desktop>
