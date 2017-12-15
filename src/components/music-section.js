@@ -7,6 +7,8 @@ import { Desktop } from '../utils/responsive'
 import { SocialImageIcon } from './social-icon'
 import tidalIcon from './images/icon-tidal.png'
 import amazonIcon from './images/icon-amazonmusic.png'
+import googlePlayIcon from './images/icon-googleplay.png'
+import itunesIcon from './images/icon-itunes.png'
 
 const sharedButtonCss = {
     cursor: 'pointer',
@@ -31,9 +33,12 @@ export const MusicIcon = (props) => (
     <div css={{
         margin: rhythm(1),
         fontSize: rhythm(1.75),
-        width: props.isMobile ? '100%' : '120px',
+        width: props.isMobile ? '40%' : '100px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     }}>
-        <a href={props.link} title={props.title || props.icon} target='_blank'>
+        <a css={{}} href={props.link} title={props.title || props.icon} target='_blank'>
             <span className={`fa fa-${props.icon} fa-lg`}/>
         </a>
     </div>
@@ -41,10 +46,12 @@ export const MusicIcon = (props) => (
 
 export const MusicImageIcon = (props) => (
     <a css={{
+        margin: rhythm(1),
         display: 'block',
-        width: props.isMobile ? '100%' : '120px',
+        width: props.isMobile ? '40%' : '100px',
     }} href={props.link} title={props.title} target='_blank'>
         <img css={{
+            verticalAlign: 'center',
             margin: rhythm(1),
             height: rhythm(2),
             width: 'auto',
@@ -58,7 +65,7 @@ const MusicSection = (props) => (
 
         <div css={{
             marginTop: rhythm(2),
-            width: props.isMobile ? '90vw' : '750px',
+            width: props.isMobile ? '90vw' : '850px',
             display: 'flex',
             justifyContent: 'space-around',
             alignContent: 'center',
@@ -67,10 +74,19 @@ const MusicSection = (props) => (
         }}>
             <MusicImageIcon isMobile={props.isMobile} src={amazonIcon} title='Amazon Music'
                             link='https://smile.amazon.com/dp/B0788DKN22/ref=cm_sw_r_cp_api_zHUmAb58C3KWT'/>
-            <MusicIcon isMobile={props.isMobile} icon="apple" title='apple music'
+
+            <MusicIcon isMobile={props.isMobile} icon="apple" title='Apple Music'
                        link='https://itunes.apple.com/us/album/girls-goin-hailey-single/1325462470'/>
+
             {/*<SocialIcon icon="soundcloud" link='#' styles={iconStyles}/>
             <SocialIcon icon="spotify" link='#' styles={iconStyles}/>*/}
+
+            <MusicImageIcon isMobile={props.isMobile} src={googlePlayIcon} title='Google Play'
+                            link='https://play.google.com/store/music/album/Trap_Hill_Girls_Goin_Hailey?id=Bogvpqyueqricy7grtrgrbcqjd4'/>
+
+            <MusicImageIcon isMobile={props.isMobile} src={itunesIcon} title='iTunes'
+                            link='https://itunes.apple.com/us/album/girls-goin-hailey-single/1325462470?uo=4&app=itunes'/>
+
             <MusicImageIcon isMobile={props.isMobile} src={tidalIcon} title='Tidal'
                             link='https://tidal.com/track/82469467'/>
 
