@@ -31,46 +31,51 @@ const handleClick = (e) => {
 
 export const MusicIcon = (props) => (
     <div css={{
-        margin: rhythm(1),
         fontSize: rhythm(1.75),
-        width: props.isMobile ? '40%' : '100px',
+        flex: '1 0 0px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
     }}>
-        <a css={{}} href={props.link} title={props.title || props.icon} target='_blank'>
-            <span className={`fa fa-${props.icon} fa-lg`}/>
+        <a className={`fa fa-${props.icon} fa-lg`} css={{
+            margin: rhythm(1),
+        }} href={props.link} title={props.title || props.icon} target='_blank'>
         </a>
     </div>
 )
 
 export const MusicImageIcon = (props) => (
-    <a css={{
-        margin: rhythm(1),
-        display: 'block',
-        width: props.isMobile ? '40%' : '100px',
-    }} href={props.link} title={props.title} target='_blank'>
-        <img css={{
-            verticalAlign: 'center',
+    <div css={{
+        flex: '1 0 0px',
+    }}>
+        <a css={{
+            display: 'block',
+            minWidth: '100px',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: rhythm(1),
             margin: rhythm(1),
-            height: rhythm(2),
-            width: 'auto',
-        }} src={props.src} alt={props.alt || props.title}/>
-    </a>
+        }} href={props.link} title={props.title} target='_blank'>
+            <img css={{
+                height: rhythm(2),
+                width: 'auto',
+                margin: 0,
+            }} src={props.src} alt={props.alt || props.title}/>
+        </a>
+    </div>
 )
 
 const MusicSection = (props) => (
     <Section id="music">
         <SectionTitle centered>MUSIC</SectionTitle>
-
         <div css={{
             marginTop: rhythm(2),
-            width: props.isMobile ? '90vw' : '850px',
             display: 'flex',
             justifyContent: 'space-around',
             alignContent: 'center',
             textAlign: 'center',
             flexWrap: 'wrap',
+            maxWidth: props.isMobile ? '500px' : '100%',
         }}>
             <MusicImageIcon isMobile={props.isMobile} src={amazonIcon} title='Amazon Music'
                             link='https://smile.amazon.com/dp/B0788DKN22/ref=cm_sw_r_cp_api_zHUmAb58C3KWT'/>
@@ -78,14 +83,14 @@ const MusicSection = (props) => (
             <MusicIcon isMobile={props.isMobile} icon="apple" title='Apple Music'
                        link='https://itunes.apple.com/us/album/girls-goin-hailey-single/1325462470'/>
 
-            {/*<SocialIcon icon="soundcloud" link='#' styles={iconStyles}/>
-            <SocialIcon icon="spotify" link='#' styles={iconStyles}/>*/}
+            <MusicImageIcon isMobile={props.isMobile} src={itunesIcon} title='iTunes'
+                            link='https://itunes.apple.com/us/album/girls-goin-hailey-single/1325462470?uo=4&app=itunes'/>
 
             <MusicImageIcon isMobile={props.isMobile} src={googlePlayIcon} title='Google Play'
                             link='https://play.google.com/store/music/album/Trap_Hill_Girls_Goin_Hailey?id=Bogvpqyueqricy7grtrgrbcqjd4'/>
 
-            <MusicImageIcon isMobile={props.isMobile} src={itunesIcon} title='iTunes'
-                            link='https://itunes.apple.com/us/album/girls-goin-hailey-single/1325462470?uo=4&app=itunes'/>
+            <MusicIcon isMobile={props.isMobile} icon="spotify" title='Spotify'
+                       link='https://open.spotify.com/track/2sjATR9BpmST5jkc2oXnNT?si=jQ226nLnSy-BlsZ8YvrfnQ'/>
 
             <MusicImageIcon isMobile={props.isMobile} src={tidalIcon} title='Tidal'
                             link='https://tidal.com/track/82469467'/>

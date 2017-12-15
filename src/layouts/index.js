@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { rhythm } from '../utils/typography';
 import 'normalize.css';
+import favicon from './favicon.png'
 
 const TemplateWrapper = ({ children, data }) => (
     <div>
@@ -12,7 +13,8 @@ const TemplateWrapper = ({ children, data }) => (
                 { name: 'description', content: data.site.siteMetadata.description },
                 { name: 'keywords', content: data.site.siteMetadata.keywords },
             ]}
-        />
+        ><link rel="shortcut icon" href={favicon} type="image/x-icon" />
+        </Helmet>
         <div>
             {children()}
         </div>

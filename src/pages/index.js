@@ -8,7 +8,7 @@ import MusicSection from "../components/music-section";
 import MerchSection from '../components/merch-section';
 import AboutSection from '../components/about-section';
 import Footer from '../components/footer'
-import { DefaultResponsive, Desktop, Tablet } from '../utils/responsive'
+import { DefaultResponsive } from '../utils/responsive'
 
 class IndexPageContainer extends React.Component {
     constructor(props) {
