@@ -14,6 +14,15 @@ module.exports = {
                 pathToConfigModule: `src/utils/typography.js`,
             },
         },
+        {
+            resolve: `gatsby-plugin-google-tagmanager`,
+            options: {
+                id: 'UA-115002255-1',
+                // Include GTM in development.
+                // Defaults to false meaning GTM will only be loaded in production.
+                includeInDevelopment: false,
+            },
+        },
         'gatsby-plugin-glamor',
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-netlify`, // make sure to put last in the array
