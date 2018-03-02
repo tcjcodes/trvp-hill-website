@@ -13,7 +13,18 @@ const TemplateWrapper = ({ children, data }) => (
                 { name: 'description', content: data.site.siteMetadata.description },
                 { name: 'keywords', content: data.site.siteMetadata.keywords },
             ]}
-        ><link rel="shortcut icon" href={favicon} type="image/x-icon" />
+            script={[]}
+        >
+            <link rel="shortcut icon" href={favicon} type="image/x-icon"/>
+            {/*Global Site Tag (gtag.js) - Google Analytics*/}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115002255-1"/>
+            <script type="text/javascript">{`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments)}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-115002255-1');
+                `}</script>
         </Helmet>
         <div>
             {children()}
