@@ -15,13 +15,12 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-google-analytics`,
+            resolve: `gatsby-plugin-google-tagmanager`,
             options: {
-                trackingId: `UA-115002255-1`,
-                // Puts tracking script in the head instead of the body
-                head: false,
-                // Setting this parameter is optional
-                anonymize: true,
+                id: "UA-115002255-1",
+                // Include GTM in development.
+                // Defaults to false meaning GTM will only be loaded in production.
+                includeInDevelopment: false,
             },
         },
         'gatsby-plugin-glamor',

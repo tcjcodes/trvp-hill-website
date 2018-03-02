@@ -9,7 +9,6 @@
     "gatsby-link": "1.6.22",
     "gatsby-plugin-catch-links": "^1.0.9",
     "gatsby-plugin-glamor": "1.6.8",
-    "gatsby-plugin-google-analytics": "^1.0.20",
     "gatsby-plugin-netlify": "^1.0.8",
     "gatsby-plugin-react-helmet": "1.0.8",
     "gatsby-plugin-typography": "1.7.10",
@@ -35,6 +34,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "gatsby-plugin-google-tagmanager": "^1.0.15",
     "gh-pages": "1.0.0",
     "prettier": "1.7.4"
   }
